@@ -1,0 +1,27 @@
+.container {
+  width: 100%;
+  max-width: var(--grid-max);
+  margin-inline: auto;
+  padding-inline: var(--grid-gutter);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Section vertical rhythm */
+.section-pad {
+  padding-block: var(--space-16);
+}
+
+.section-pad--lg {
+  padding-block: var(--space-24);
+}

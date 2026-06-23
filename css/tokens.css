@@ -1,0 +1,63 @@
+:root {
+  /* ── Brand colors ─────────────────────────────────── */
+  --color-white:      #FFFFFF;
+  --color-off-white:  #F5F5F3;
+  --color-grey-light: #E8E8E6;
+  --color-grey-mid:   #9A9A96;
+  --color-grey-dark:  #3A3A38;
+  --color-black:      #111110;
+
+  /* ── City accent colors (use per city only) ───────── */
+  --color-colombo:    #6B1F2E;
+  --color-shanghai:   #D4A96A;
+  --color-barcelona:  #6F8099;
+  --color-tokyo:      #5B5B9E;
+
+  /* ── Typography ───────────────────────────────────── */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Outfit', system-ui, sans-serif;
+  --font-mono:    'IBM Plex Mono', monospace;
+
+  /* ── Type scale ───────────────────────────────────── */
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.5rem;
+  --text-2xl:  2.25rem;
+  --text-3xl:  3.5rem;
+  --text-hero: clamp(4rem, 10vw, 9rem);
+
+  /* ── Spacing (8px base) ───────────────────────────── */
+  --space-1:  0.5rem;
+  --space-2:  1rem;
+  --space-3:  1.5rem;
+  --space-4:  2rem;
+  --space-6:  3rem;
+  --space-8:  4rem;
+  --space-12: 6rem;
+  --space-16: 8rem;
+  --space-24: 12rem;
+
+  /* ── Grid ─────────────────────────────────────────── */
+  --grid-max:    1280px;
+  --grid-gutter: clamp(1.5rem, 4vw, 3rem);
+
+  /* ── Border radius ────────────────────────────────── */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   16px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ──────────────────────────────────────── */
+  --shadow-sm: 0 1px 3px rgba(17, 17, 16, 0.06), 0 1px 2px rgba(17, 17, 16, 0.04);
+  --shadow-md: 0 4px 12px rgba(17, 17, 16, 0.08), 0 2px 4px rgba(17, 17, 16, 0.04);
+  --shadow-lg: 0 8px 28px rgba(17, 17, 16, 0.12), 0 4px 8px rgba(17, 17, 16, 0.06);
+
+  /* ── Transitions ──────────────────────────────────── */
+  --transition:      0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ── Nav height ───────────────────────────────────── */
+  --nav-h: 72px;
+}
