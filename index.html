@@ -20,7 +20,7 @@
 <span id="top"></span>
 
 <!-- corner logo, always visible -->
-<a href="#top" style="position:fixed;top:1.4rem;left:2.2rem;z-index:70;display:flex;flex-direction:column;line-height:1;text-decoration:none;mix-blend-mode:difference;color:#fff;">
+<a href="#top" style="position:fixed;top:1.4rem;left:2.2rem;z-index:70;display:flex;flex-direction:column;line-height:1;text-decoration:none;color:#000;">
   <span style="font-family:Arial;font-weight:500;font-size:1.15rem;letter-spacing:.01em;">CityScales</span>
   <span style="font-size:.5rem;letter-spacing:.4em;text-transform:uppercase;margin-top:5px;opacity:.75;">International Architecture Workshop</span>
 </a>
@@ -35,10 +35,13 @@
 
 <!-- ============ HERO ============ -->
 <section id="scaleHero" style="height:100vh;position:relative;overflow:hidden;">
-  <img src="assets/img/hero-new.jpg" alt="City Scales workshop" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+  <picture>
+    <source srcset="assets/img/hero-new.avif" type="image/avif">
+    <img src="assets/img/hero-new.jpg" alt="City Scales workshop" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+  </picture>
   <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.38) 0%,rgba(10,10,10,0) 40%,rgba(10,10,10,.55) 100%);"></div>
-  <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2;">
-    <h1 style="font-family:'Aptos',Arial,sans-serif;font-weight:900;color:#f4f3f0;font-size:clamp(3.5rem,13vw,14rem);line-height:.9;letter-spacing:-.025em;">City Scales</h1>
+  <div style="position:absolute;bottom:22%;right:2.5rem;z-index:2;">
+    <h1 style="font-family:'Aptos',Arial,sans-serif;font-weight:900;color:#f4f3f0;font-size:clamp(2rem,5vw,4.5rem);line-height:.9;letter-spacing:-.025em;">CityScales</h1>
   </div>
 </section>
 <!-- ============ EDITIONS (big editorial rows) ============ -->
