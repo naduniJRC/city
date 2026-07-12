@@ -47,6 +47,14 @@
 
       /* Hero text */
       #scaleHero>div:last-child{right:1.2rem!important;bottom:12%!important}
+
+      /* Cities — mobile: hide floating thumbs, always show descriptions */
+      [data-editthumb]{display:none!important}
+      [data-editdesc]{max-height:200px!important;opacity:1!important;margin-top:.5rem!important}
+
+      /* Tap-to-expand inline image */
+      .city-inline-img{display:none;width:100%;height:140px;object-fit:cover;margin-top:.8rem;transition:opacity .3s ease;}
+      .city-row-open .city-inline-img{display:block;}
     }
 
     @media(max-width:480px){
@@ -76,16 +84,13 @@
 <!-- ============ HERO ============ -->
 <section id="scaleHero" style="height:100vh;position:relative;overflow:hidden;">
   <div class="hero-slide" style="position:absolute;inset:0;opacity:1;transition:opacity 1.4s ease;z-index:0;">
-    <picture>
-      <source srcset="assets/img/hero-new.avif" type="image/avif">
-      <img src="assets/img/hero-new.jpg" alt="" style="width:100%;height:100%;object-fit:cover;">
-    </picture>
-  </div>
-  <div class="hero-slide" style="position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease;z-index:0;">
     <img src="assets/img/cover-one.webp" alt="" style="width:100%;height:100%;object-fit:cover;">
   </div>
   <div class="hero-slide" style="position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease;z-index:0;">
-    <img src="assets/img/cover-two.jpeg" alt="" style="width:100%;height:100%;object-fit:cover;">
+    <img src="assets/img/red-mosq.jpg" alt="" style="width:100%;height:100%;object-fit:cover;">
+  </div>
+  <div class="hero-slide" style="position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease;z-index:0;">
+    <img src="assets/img/barcilona-cover.jpg" alt="" style="width:100%;height:100%;object-fit:cover;">
   </div>
   <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.38) 0%,rgba(10,10,10,0) 40%,rgba(10,10,10,.55) 100%);z-index:1;"></div>
   <div style="position:absolute;bottom:18%;right:2.5rem;z-index:2;text-align:left;display:inline-block;">
@@ -161,7 +166,7 @@
         <div>
           <span style="font-family:Arial;font-weight:400;font-size:1.3rem;display:block;line-height:1.05;letter-spacing:-.01em;">Patagonia</span>
         </div>
-        <span style="font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(244,243,240,.5);justify-self:end;">Argentina · Soon</span>
+        <span style="font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(244,243,240,.5);justify-self:end;">Chile · Soon</span>
       </a>
 
       <a href="#" data-editrow="" style="display:grid;grid-template-columns:90px 1fr auto;align-items:center;gap:2.5rem;padding:2.6rem 0;border-bottom:1px solid rgba(244,243,240,.14);text-decoration:none;color:inherit;position:relative;opacity:.55;">
@@ -319,12 +324,12 @@
       <div data-reveal="" style="background:#f4f3f0;padding:3.2rem;">
         <h3 style="font-family:Arial;font-weight:500;font-size:1.5rem;margin-bottom:1rem;">For Universities</h3>
         <p style="font-size:.92rem;line-height:1.85;color:#5b5a50;margin-bottom:2rem;">Partner with City Scales to host or co-organise a workshop edition. We welcome universities committed to international architectural education.</p>
-        <a href="mailto:cityscales@gmail.com" style="font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:#15140f;text-decoration:none;border-bottom:1px solid #15140f;padding-bottom:4px;">Become a Partner â</a>
+        <a href="mailto:njayaweera@uom.lk?cc=adria.sanchez@salle.url.edu,jose.remon@xjtlu.edu.cn&subject=Partnership%20Inquiry%20%E2%80%94%20City%20Scales" style="font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:#15140f;text-decoration:none;border-bottom:1px solid #15140f;padding-bottom:4px;">Become a Partner</a>
       </div>
       <div data-reveal="" style="background:#f4f3f0;padding:3.2rem;">
         <h3 style="font-family:Arial;font-weight:500;font-size:1.5rem;margin-bottom:1rem;">For Students</h3>
         <p style="font-size:.92rem;line-height:1.85;color:#5b5a50;margin-bottom:2rem;">Apply to participate in an upcoming workshop. Collaborate with international peers and develop design proposals that matter.</p>
-        <a href="mailto:cityscales@gmail.com" style="font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:#15140f;text-decoration:none;border-bottom:1px solid #15140f;padding-bottom:4px;">Apply for a Workshop â</a>
+        <a href="mailto:cityscales@gmail.com" style="font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:#15140f;text-decoration:none;border-bottom:1px solid #15140f;padding-bottom:4px;">Apply for a Workshop</a>
       </div>
     </div>
   </div>
@@ -384,17 +389,39 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // ---- Edition row hover ----
+  const isMobile = window.matchMedia('(max-width:768px)').matches;
+
   document.querySelectorAll('[data-editrow]').forEach(row => {
     const desc = row.querySelector('[data-editdesc]');
     const thumb = row.querySelector('[data-editthumb]');
-    row.addEventListener('mouseenter', () => {
-      if (desc) { desc.style.maxHeight = '120px'; desc.style.opacity = '1'; desc.style.marginTop = '.8rem'; }
-      if (thumb) { thumb.style.opacity = '1'; thumb.style.transform = 'translateY(-50%) scale(1)'; }
-    });
-    row.addEventListener('mouseleave', () => {
-      if (desc) { desc.style.maxHeight = '0'; desc.style.opacity = '0'; desc.style.marginTop = '0'; }
-      if (thumb) { thumb.style.opacity = '0'; thumb.style.transform = 'translateY(-50%) scale(.9)'; }
-    });
+
+    if (isMobile) {
+      // inject inline image once from thumb src
+      const thumbImg = thumb && thumb.querySelector('img');
+      if (thumbImg && desc) {
+        const inlineImg = document.createElement('img');
+        inlineImg.src = thumbImg.src;
+        inlineImg.className = 'city-inline-img';
+        desc.parentNode.insertBefore(inlineImg, desc.nextSibling);
+      }
+      // tap to toggle open/close
+      row.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isOpen = row.classList.contains('city-row-open');
+        // close all
+        document.querySelectorAll('[data-editrow].city-row-open').forEach(r => r.classList.remove('city-row-open'));
+        if (!isOpen) row.classList.add('city-row-open');
+      });
+    } else {
+      row.addEventListener('mouseenter', () => {
+        if (desc) { desc.style.maxHeight = '120px'; desc.style.opacity = '1'; desc.style.marginTop = '.8rem'; }
+        if (thumb) { thumb.style.opacity = '1'; thumb.style.transform = 'translateY(-50%) scale(1)'; }
+      });
+      row.addEventListener('mouseleave', () => {
+        if (desc) { desc.style.maxHeight = '0'; desc.style.opacity = '0'; desc.style.marginTop = '0'; }
+        if (thumb) { thumb.style.opacity = '0'; thumb.style.transform = 'translateY(-50%) scale(.9)'; }
+      });
+    }
   });
 
 });
