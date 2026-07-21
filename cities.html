@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editions — City Scales</title>
+  <meta name="description" content="Six cities, one inquiry — the City Scales international architecture workshop editions across Colombo, Barcelona, Shanghai, Tokyo–Tsukuba, Patagonia, and Venezia.">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;overflow-x:hidden;}
+    body{font-family:Arial,sans-serif;background:#f4f3f0;color:#15140f;-webkit-font-smoothing:antialiased;}
+    ::selection{background:#15140f;color:#f4f3f0;}
+    a{color:inherit;text-decoration:none;}
+    a:hover{opacity:.72;}
+
+    @media(max-width:900px){
+      .city-split{grid-template-columns:1fr!important}
+      .city-split-rev{grid-template-columns:1fr!important}
+      .city-img-col{min-height:60vw!important}
+      .future-grid{grid-template-columns:1fr!important}
+      .stats-row{grid-template-columns:1fr 1fr!important}
+    }
+    @media(max-width:640px){
+      .city-content{padding:4rem 1.8rem!important}
+      #footer-grid{grid-template-columns:1fr 1fr!important;gap:2rem!important}
+      #footer-bottom{flex-direction:column!important;gap:.6rem!important}
+      #navPanel a,#navPanel span{font-size:.6rem!important;padding:.38rem .55rem!important;letter-spacing:.1em!important}
+      .stats-row{grid-template-columns:1fr!important}
+      .panels-row{flex-direction:column!important}
+    }
+    @media(max-width:420px){
+      #footer-grid{grid-template-columns:1fr!important}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<div id="navPanel" style="position:fixed;top:1.1rem;left:50%;z-index:100;display:flex;gap:.4rem;align-items:center;background:rgba(21,20,15,.9);backdrop-filter:blur(8px);padding:.5rem .6rem;border-radius:40px;transform:translateX(-50%);">
+  <a href="index.html" style="font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#f4f3f0;padding:.55rem 1.1rem;border-radius:30px;">Home</a>
+  <span style="font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#f4f3f0;padding:.55rem 1.1rem;border-radius:30px;background:rgba(244,243,240,.15);">Editions</span>
+  <a href="index.html#about" style="font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#f4f3f0;padding:.55rem 1.1rem;border-radius:30px;">About</a>
+  <a href="index.html#process" style="font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#f4f3f0;padding:.55rem 1.1rem;border-radius:30px;">Process</a>
+  <a href="people.html" style="font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#f4f3f0;padding:.55rem 1.1rem;border-radius:30px;">People</a>
+  <a href="index.html#join" style="font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#15140f;background:#f4f3f0;padding:.55rem 1.3rem;border-radius:30px;">Apply</a>
+</div>
+
+<!-- HERO -->
+<section style="height:65vh;position:relative;overflow:hidden;background:#15140f;">
+  <div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(244,243,240,.022) 0 1px,transparent 1px 100px),repeating-linear-gradient(90deg,rgba(244,243,240,.022) 0 1px,transparent 1px 100px);pointer-events:none;"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(10,10,10,.55) 100%);"></div>
+  <div style="position:absolute;bottom:18%;right:2.5rem;z-index:2;text-align:left;">
+    <h1 style="font-family:Arial;font-weight:900;color:#f4f3f0;font-size:clamp(2.2rem,5vw,4.5rem);line-height:.9;letter-spacing:-.025em;">Editions</h1>
+    <p style="font-size:clamp(.6rem,.85vw,.8rem);text-transform:uppercase;color:#f4f3f0;margin-top:.9rem;opacity:.85;letter-spacing:.22em;">Six cities, one inquiry</p>
+  </div>
+  <!-- Edition count marker -->
+  <div style="position:absolute;top:50%;left:2.5rem;transform:translateY(-50%);z-index:2;">
+    <span style="font-family:Arial;font-weight:900;font-size:clamp(4rem,10vw,9rem);color:rgba(244,243,240,.06);line-height:1;letter-spacing:-.04em;">06</span>
+  </div>
+</section>
+
+<!-- INTRO STRIP -->
+<div style="background:#f4f3f0;border-bottom:1px solid rgba(21,20,15,.1);padding:2.8rem 4rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;">
+  <p data-reveal style="font-size:.88rem;line-height:1.8;color:#5b5a50;max-width:680px;">Each edition is hosted by a partner university in a distinct urban context, inviting students and faculty to investigate the scale, grain, and logic of that city through collaborative research and design over an intensive two-week workshop.</p>
+  <div style="display:flex;gap:3.5rem;flex-shrink:0;">
+    <div>
+      <span style="font-family:Arial;font-weight:400;font-size:2rem;display:block;line-height:1;color:#15140f;">4</span>
+      <span style="font-size:.54rem;letter-spacing:.22em;text-transform:uppercase;color:#9b9a92;margin-top:.4rem;display:block;">Completed</span>
+    </div>
+    <div>
+      <span style="font-family:Arial;font-weight:400;font-size:2rem;display:block;line-height:1;color:#15140f;">2</span>
+      <span style="font-size:.54rem;letter-spacing:.22em;text-transform:uppercase;color:#9b9a92;margin-top:.4rem;display:block;">Upcoming</span>
+    </div>
+    <div>
+      <span style="font-family:Arial;font-weight:400;font-size:2rem;display:block;line-height:1;color:#15140f;">6</span>
+      <span style="font-size:.54rem;letter-spacing:.22em;text-transform:uppercase;color:#9b9a92;margin-top:.4rem;display:block;">Cities</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- EDITION 01 — COLOMBO -->
+<!-- ============================================================ -->
+<section class="city-split" style="display:grid;grid-template-columns:1fr 1fr;min-height:80vh;background:#f4f3f0;">
+  <!-- Image column -->
+  <div class="city-img-col" style="position:relative;overflow:hidden;min-height:560px;background:#dedad3;">
+    <img src="assets/img/colombo-edition.jpg" alt="Colombo Edition" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+    <div class="img-placeholder" style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,#dedad3 0 14px,#d0ccc4 14px 28px);display:flex;align-items:center;justify-content:center;">
+      <span style="font-family:Arial;font-weight:900;font-size:9rem;color:rgba(21,20,15,.04);letter-spacing:-.05em;">01</span>
+    </div>
+    <!-- Edition badge -->
+    <div style="position:absolute;top:2rem;left:2rem;background:#15140f;color:#f4f3f0;padding:.4rem .9rem;border-radius:30px;">
+      <span style="font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;">Edition 01</span>
+    </div>
+    <!-- Status badge -->
+    <div style="position:absolute;bottom:2rem;left:2rem;background:rgba(21,20,15,.75);backdrop-filter:blur(6px);color:#f4f3f0;padding:.4rem .9rem;border-radius:30px;">
+      <span style="font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;">Completed</span>
+    </div>
+  </div>
+  <!-- Content column -->
+  <div class="city-content" style="padding:6rem 4.5rem;display:flex;flex-direction:column;justify-content:center;">
+    <span data-reveal style="font-size:.58rem;letter-spacing:.36em;text-transform:uppercase;color:#9b9a92;display:block;margin-bottom:2rem;">Sri Lanka · 2022</span>
+    <h2 data-reveal style="font-family:Arial;font-weight:900;font-size:clamp(2.2rem,4.5vw,3.8rem);line-height:.92;letter-spacing:-.03em;color:#15140f;margin-bottom:2.4rem;">Colombo</h2>
+    <p data-reveal style="font-size:.95rem;line-height:1.9;color:#5b5a50;max-width:480px;margin-bottom:2.8rem;">The inaugural edition explored Colombo's layered colonial fabric, rapid densification, and its waterways — examining how tropical urbanism mediates between heritage, growth, and climate. Hosted at the University of Moratuwa.</p>
+    <!-- Stats -->
+    <div class="stats-row" data-reveal style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(21,20,15,.1);border-left:1px solid rgba(21,20,15,.1);">
+      <div style="padding:1.6rem 1.4rem;border-right:1px solid rgba(21,20,15,.1);border-bottom:1px solid rgba(21,20,15,.1);">
+        <span style="font-family:Arial;font-weight:400;font-size:1.8rem;display:block;line-height:1;color:#15140f;">24</span>
+        <span style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:#9b9a92;margin-top:.4rem;display:block;">Students</span>
+      </div>
+      <div style="padding:1.6rem 1.4rem;border-right:1px solid rgba(21,20,15,.1);border-bottom:1px solid rgba(21,20,15,.1);">
+        <span style="font-family:Arial;font-weight:400;font-size:1.8rem;display:block;line-height:1;color:#15140f;">4</span>
+        <span style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:#9b9a92;margin-top:.4rem;display:block;">Universities</span>
+      </div>
+      <div style="padding:1.6rem 1.4rem;border-bottom:1px solid rgba(21,20,15,.1);">
+        <span style="font-family:Arial;font-weight:400;font-size:1.8rem;display:block;line-height:1;color:#15140f;">14</span>
+        <span style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:#9b9a92;margin-top:.4rem;display:block;">Days</span>
+      </div>
+    </div>
+    <!-- Focus areas -->
+    <div data-reveal style="margin-top:2.4rem;display:flex;gap:.6rem;flex-wrap:wrap;">
+      <span style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:#5b5a50;border:1px solid rgba(21,20,15,.18);padding:.35rem .8rem;border-radius:20px;">Tropical Urbanism</span>
+      <span style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:#5b5a50;border:1px solid rgba(21,20,15,.18);padding:.35rem .8rem;border-radius:20px;">Heritage &amp; Growth</span>
+      <span style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:#5b5a50;border:1px solid rgba(21,20,15,.18);padding:.35rem .8rem;border-radius:20px;">Waterways</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- EDITION 02 — BARCELONA -->
+<!-- ============================================================ -->
+<section class="city-split-rev" style="display:grid;grid-template-columns:1fr 1fr;min-height:80vh;background:#15140f;color:#f4f3f0;">
+  <!-- Content column (reversed) -->
+  <div class="city-content" style="padding:6rem 4.5rem;display:flex;flex-direction:column;justify-content:center;order:1;">
+    <span data-reveal style="font-size:.58rem;letter-spacing:.36em;text-transform:uppercase;color:rgba(244,243,240,.35);display:block;margin-bottom:2rem;">Spain · 2023</span>
+    <h2 data-reveal style="font-family:Arial;font-weight:900;font-size:clamp(2.2rem,4.5vw,3.8rem);line-height:.92;letter-spacing:-.03em;color:#f4f3f0;margin-bottom:2.4rem;">Barcelona</h2>
+    <p data-reveal style="font-size:.95rem;line-height:1.9;color:rgba(244,243,240,.5);max-width:480px;margin-bottom:2.8rem;">The second edition investigated the Eixample superblock, Mediterranean public space, and the tension between tourist infrastructure and neighbourhood life. Hosted at La Salle Campus Barcelona, Universitat Ramon Llull.</p>
+    <!-- Stats -->
+    <div class="stats-row" data-reveal style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(244,243,240,.12);border-left:1px solid rgba(244,243,240,.12);">
+      <div style="padding:1.6rem 1.4rem;border-right:1px solid rgba(244,243,240,.12);border-bottom:1px solid rgba(244,243,240,.12);">
+        <span style="font-family:Arial;font-weight:400;font-size:1.8rem;display:block;line-height:1;color:#f4f3f0;">28</span>
+        <span style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,243,240,.35);margin-top:.4rem;display:block;">Students</span>
+      </div>
+      <div style="padding:1.6rem 1.4rem;border-right:1px solid rgba(244,243,240,.12);border-bottom:1px solid rgba(244,243,240,.12);">
+        <span style="font-family:Arial;font-weight:400;font-size:1.8rem;display:block;line-height:1;color:#f4f3f0;">5</span>
+        <span style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,243,240,.35);margin-top:.4rem;display:block;">Universities</span>
+      </div>
+      <div style="padding:1.6rem 1.4rem;border-bottom:1px solid rgba(244,243,240,.12);">
+        <span style="font-family:Arial;font-weight:400;font-size:1.8rem;display:block;line-height:1;color:#f4f3f0;">14</span>
+        <span style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,243,240,.35);margin-top:.4rem;display:block;">Days</span>
+      </div>
+    </div>
+    <!-- Focus areas -->
+    <div data-reveal style="margin-top:2.4rem;display:flex;gap:.6rem;flex-wrap:wrap;">
+      <span style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,243,240,.4);border:1px solid rgba(244,243,240,.2);padding:.35rem .8rem;border-radius:20px;">Superblock</span>
+      <span style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,243,240,.4);border:1px solid rgba(244,243,240,.2);padding:.35rem .8rem;border-radius:20px;">Public Space</span>
+      <span style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,243,240,.4);border:1px solid rgba(244,243,240,.2);padding:.35rem .8rem;border-radius:20px;">Mediterranean</span>
+    </div>
+  </div>
+  <!-- Image column -->
+  <div class="city-img-col" style="position:relative;overflow:hidden;min-height:560px;background:#272520;order:2;">
+    <img src="assets/img/barcelona-edition.jpg" alt="Barcelona Edition" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+    <div class="img-placeholder" style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,#222120 0 14px,#272520 14px 28px);display:flex;align-items:center;justify-content:center;">
+      <span style="font-family:Arial;font-weight:900;font-size:9rem;color:rgba(244,243,240,.04);letter-spacing:-.05em;">02</span>
+    </div>
+    <div style="position:absolute;top:2rem;right:2rem;background:#f4f3f0;color:#15140f;padding:.4rem .9rem;border-radius:30px;">
+      <span style="font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;">Edition 02</span>
+    </div>
+    <div style="position:absolute;bottom:2rem;right:2rem;background:rgba(244,243,240,.15);backdrop-filter:blur(6px);color:#f4f3f0;padding:.4rem .9rem;border-radius:30px;">
+      <span style="font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;">Completed</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- EDITION 03 — SHANGHAI -->
+<!-- ============================================================ -->
+<section class="city-split" style="display:grid;grid-template-columns:1fr 1fr;min-height:80vh;background:#f4f3f0;">
+  <!-- Image column -->
+  <div class="city-img-col" style="position:relative;overflow:hidden;min-height:560px;background:#dedad3;">
+    <img src="assets/img/shanghai-edition.jpg" alt="Shanghai Edition" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+    <div class="img-placeholder" style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,#dedad3 0 14px,#d0ccc4 14px 28px);display:flex;align-items:center;justify-content:center;">
+      <span style="font-family:Arial;font-weight:900;font-size:9rem;color:rgba(21,20,15,.04);letter-spacing:-.05em;">03</span>
+    </div>
+    <div style="position:absolute;top:2rem;left:2rem;background:#15140f;color:#f4f3f0;padding:.4rem .9rem;border-radius:30px;">
+      <span style="font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;">Edition 03</span>
+    </div>
+    <div style="position:absolute;bottom:2rem;left:2rem;background:rgba(21,20,15,.75);backdrop-filter:blur(6px);color:#f4f3f0;padding:.4rem .9rem;border-radius:30px;">
+      <span style="font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;">Completed</span>
+    </div>
+  </div>
+  <!-- Content column -->
+  <div class="city-content" style="padding:6rem 4.5rem;display:flex;flex-direction:column;justify-content:center;">
+    <span data-reveal style="font-size:.58rem;letter-spacing:.36em;text-transform:uppercase;color:#9b9a92;display:block;margin-bottom:2rem;">China · 2024</span>
+    <h2 data-reveal style="font-family:Arial;font-weight:900;font-size:clamp(2.2rem,4.5vw,3.8rem);line-height:.92;letter-spacing:-.03em;color:#15140f;margin-bottom:2.4rem;">Shanghai</h2>
+    <p data-reveal style="font-size:.95rem;line-height:1.9;color:#5b5a50;max-width:480px;margin-bottom:2.8rem;">The third edition examined Shanghai's extraordinary density, the lilong residential typology, and the coexistence of global-scale infrastructure with intimate neighbourhood grain. Hosted at Xi'an Jiaotong-Liverpool University.</p>
+    <!-- Stats -->
+    <div class="stats-row" data-reveal style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(21,20,15,.1);border-left:1px solid rgba(21,20,15,.1);">
+      <div style="padding:1.6rem 1.4rem;border-right:1px solid rgba(21,20,15,.1);border-bottom:1px solid rgba(21,20,15,.1);">
+        <span style="font-family:Arial;font-weight:400;font-size:1.8rem;display:block;line-height:1;color:#15140f;">32</span>
+        <span style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:#9b9a92;margin-top:.4rem;display:block;">Students</span>
+      </div>
+      <div style="padding:1.6rem 1.4rem;border-right:1px solid rgba(21,20,15,.1);border-bottom:1px solid rgba(21,20,15,.1);">
+        <span style="font-family:Arial;font-weight:400;font-size:1.8rem;display:block;line-height:1;color:#15140f;">5</span>
+        <span style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:#9b9a92;margin-top:.4rem;display:block;">Universities</span>
+      </div>
+      <div style="padding:1.6rem 1.4rem;border-bottom:1px solid rgba(21,20,15,.1);">
+        <span style="font-family:Arial;font-weight:400;font-size:1.8rem;display:block;line-height:1;color:#15140f;">14</span>
+        <span style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:#9b9a92;margin-top:.4rem;display:block;">Days</span>
+      </div>
+    </div>
+    <!-- Focus areas -->
+    <div data-reveal style="margin-top:2.4rem;display:flex;gap:.6rem;flex-wrap:wrap;">
+      <span style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:#5b5a50;border:1px solid rgba(21,20,15,.18);padding:.35rem .8rem;border-radius:20px;">High Density</span>
+      <span style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:#5b5a50;border:1px solid rgba(21,20,15,.18);padding:.35rem .8rem;border-radius:20px;">Lilong</span>
+      <span style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:#5b5a50;border:1px solid rgba(21,20,15,.18);padding:.35rem .8rem;border-radius:20px;">East Asian Urban</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- EDITION 04 — TOKYO–TSUKUBA (CURRENT) -->
+<!-- ============================================================ -->
+<section class="city-split-rev" style="display:grid;grid-template-columns:1fr 1fr;min-height:80vh;background:#15140f;color:#f4f3f0;">
+  <!-- Content column (reversed) -->
+  <div class="city-content" style="padding:6rem 4.5rem;display:flex;flex-direction:column;justify-content:center;order:1;">
+    <!-- Live indicator -->
+    <div data-reveal style="display:flex;align-items:center;gap:.6rem;margin-bottom:2rem;">
+      <span style="width:7px;height:7px;background:#e8a87c;border-radius:50%;display:inline-block;animation:pulse 2s ease-in-out infinite;"></span>
+      <span style="font-size:.58rem;letter-spacing:.36em;text-transform:uppercase;color:#e8a87c;">Live Edition</span>
+    </div>
+    <span data-reveal style="font-size:.58rem;letter-spacing:.36em;text-transform:uppercase;color:rgba(244,243,240,.35);display:block;margin-bottom:2rem;">Japan · 9–21 July 2026</span>
+    <h2 data-reveal style="font-family:Arial;font-weight:900;font-size:clamp(2.2rem,4.5vw,3.8rem);line-height:.92;letter-spacing:-.03em;color:#f4f3f0;margin-bottom:2.4rem;">Tokyo–<br>Tsukuba</h2>
+    <p data-reveal style="font-size:.95rem;line-height:1.9;color:rgba(244,243,240,.5);max-width:480px;margin-bottom:2.8rem;">The current edition unfolds across Tokyo's metropolitan immensity and Tsukuba's planned research city — probing the contrast between organic megalopolis and designed urban order, between ancient spatial protocols and radical modernist ambition. Hosted at the University of Tsukuba.</p>
+    <!-- Stats -->
+    <div class="stats-row" data-reveal style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(244,243,240,.12);border-left:1px solid rgba(244,243,240,.12);">
+      <div style="padding:1.6rem 1.4rem;border-right:1px solid rgba(244,243,240,.12);border-bottom:1px solid rgba(244,243,240,.12);">
+        <span style="font-family:Arial;font-weight:400;font-size:1.8rem;display:block;line-height:1;color:#f4f3f0;">36</span>
+        <span style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,243,240,.35);margin-top:.4rem;display:block;">Students</span>
+      </div>
+      <div style="padding:1.6rem 1.4rem;border-right:1px solid rgba(244,243,240,.12);border-bottom:1px solid rgba(244,243,240,.12);">
+        <span style="font-family:Arial;font-weight:400;font-size:1.8rem;display:block;line-height:1;color:#f4f3f0;">5</span>
+        <span style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,243,240,.35);margin-top:.4rem;display:block;">Universities</span>
+      </div>
+      <div style="padding:1.6rem 1.4rem;border-bottom:1px solid rgba(244,243,240,.12);">
+        <span style="font-family:Arial;font-weight:400;font-size:1.8rem;display:block;line-height:1;color:#f4f3f0;">13</span>
+        <span style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,243,240,.35);margin-top:.4rem;display:block;">Days</span>
+      </div>
+    </div>
+    <!-- Focus areas -->
+    <div data-reveal style="margin-top:2.4rem;display:flex;gap:.6rem;flex-wrap:wrap;">
+      <span style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,243,240,.4);border:1px solid rgba(244,243,240,.2);padding:.35rem .8rem;border-radius:20px;">Megalopolis</span>
+      <span style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,243,240,.4);border:1px solid rgba(244,243,240,.2);padding:.35rem .8rem;border-radius:20px;">Research City</span>
+      <span style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,243,240,.4);border:1px solid rgba(244,243,240,.2);padding:.35rem .8rem;border-radius:20px;">Urban Order</span>
+    </div>
+  </div>
+  <!-- Image column -->
+  <div class="city-img-col" style="position:relative;overflow:hidden;min-height:560px;background:#272520;order:2;">
+    <img src="assets/img/tkyo.png" alt="Tokyo–Tsukuba Edition" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+    <div class="img-placeholder" style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,#222120 0 14px,#272520 14px 28px);display:flex;align-items:center;justify-content:center;">
+      <span style="font-family:Arial;font-weight:900;font-size:9rem;color:rgba(244,243,240,.04);letter-spacing:-.05em;">04</span>
+    </div>
+    <div style="position:absolute;top:2rem;right:2rem;background:#f4f3f0;color:#15140f;padding:.4rem .9rem;border-radius:30px;">
+      <span style="font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;">Edition 04</span>
+    </div>
+    <div style="position:absolute;bottom:2rem;right:2rem;background:#e8a87c;color:#15140f;padding:.4rem .9rem;border-radius:30px;">
+      <span style="font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;">Current</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- FUTURE EDITIONS -->
+<!-- ============================================================ -->
+<section style="background:#f4f3f0;padding:8rem 4rem;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <div data-reveal style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5rem;border-bottom:1px solid rgba(21,20,15,.12);padding-bottom:1.4rem;">
+      <h2 style="font-family:Arial;font-weight:300;font-size:clamp(1.4rem,2.8vw,2.4rem);letter-spacing:-.01em;color:#15140f;">Future Editions</h2>
+      <span style="font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:#9b9a92;">Coming Soon</span>
+    </div>
+    <div class="future-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;">
+
+      <!-- Patagonia -->
+      <div data-reveal style="border:1px solid rgba(21,20,15,.1);overflow:hidden;">
+        <!-- Placeholder image area -->
+        <div style="width:100%;height:340px;position:relative;background:#dedad3;overflow:hidden;">
+          <div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,#dedad3 0 16px,#d0ccc4 16px 32px);display:flex;align-items:center;justify-content:center;">
+            <span style="font-family:Arial;font-weight:900;font-size:10rem;color:rgba(21,20,15,.035);letter-spacing:-.05em;">05</span>
+          </div>
+          <div style="position:absolute;top:1.5rem;left:1.5rem;background:#15140f;color:#f4f3f0;padding:.35rem .8rem;border-radius:30px;">
+            <span style="font-size:.56rem;letter-spacing:.24em;text-transform:uppercase;">Edition 05</span>
+          </div>
+          <div style="position:absolute;bottom:1.5rem;left:1.5rem;background:rgba(21,20,15,.75);backdrop-filter:blur(6px);color:#f4f3f0;padding:.35rem .8rem;border-radius:30px;">
+            <span style="font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;">Announced</span>
+          </div>
+        </div>
+        <div style="padding:3rem 3rem 3.5rem;">
+          <span style="font-size:.56rem;letter-spacing:.32em;text-transform:uppercase;color:#9b9a92;display:block;margin-bottom:1.2rem;">Chile · TBD</span>
+          <h3 style="font-family:Arial;font-weight:900;font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:.92;letter-spacing:-.025em;color:#15140f;margin-bottom:1.8rem;">Patagonia</h3>
+          <p style="font-size:.9rem;line-height:1.85;color:#5b5a50;">The fifth edition will venture into one of the world's most extreme and sparsely inhabited landscapes, questioning how architecture mediates between human occupation and vast natural territories, and what sustainable construction looks like far from urban supply chains. To be hosted at Universidad San Sebastián.</p>
+          <div style="margin-top:2rem;display:flex;gap:.6rem;flex-wrap:wrap;">
+            <span style="font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:#5b5a50;border:1px solid rgba(21,20,15,.15);padding:.3rem .7rem;border-radius:20px;">Extreme Landscape</span>
+            <span style="font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:#5b5a50;border:1px solid rgba(21,20,15,.15);padding:.3rem .7rem;border-radius:20px;">Remote Territory</span>
+            <span style="font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:#5b5a50;border:1px solid rgba(21,20,15,.15);padding:.3rem .7rem;border-radius:20px;">Bioclimatic</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Venezia -->
+      <div data-reveal style="border:1px solid rgba(21,20,15,.1);overflow:hidden;">
+        <!-- Placeholder image area -->
+        <div style="width:100%;height:340px;position:relative;background:#dedad3;overflow:hidden;">
+          <div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,#dedad3 0 16px,#d0ccc4 16px 32px);display:flex;align-items:center;justify-content:center;">
+            <span style="font-family:Arial;font-weight:900;font-size:10rem;color:rgba(21,20,15,.035);letter-spacing:-.05em;">06</span>
+          </div>
+          <div style="position:absolute;top:1.5rem;left:1.5rem;background:#15140f;color:#f4f3f0;padding:.35rem .8rem;border-radius:30px;">
+            <span style="font-size:.56rem;letter-spacing:.24em;text-transform:uppercase;">Edition 06</span>
+          </div>
+          <div style="position:absolute;bottom:1.5rem;left:1.5rem;background:rgba(21,20,15,.75);backdrop-filter:blur(6px);color:#f4f3f0;padding:.35rem .8rem;border-radius:30px;">
+            <span style="font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;">Announced</span>
+          </div>
+        </div>
+        <div style="padding:3rem 3rem 3.5rem;">
+          <span style="font-size:.56rem;letter-spacing:.32em;text-transform:uppercase;color:#9b9a92;display:block;margin-bottom:1.2rem;">Italy · TBD</span>
+          <h3 style="font-family:Arial;font-weight:900;font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:.92;letter-spacing:-.025em;color:#15140f;margin-bottom:1.8rem;">Venezia</h3>
+          <p style="font-size:.9rem;line-height:1.85;color:#5b5a50;">The sixth edition will engage with Venice's singularity as a water city — an urban configuration entirely without land-based infrastructure, shaped over centuries by tides, trade, and political power. The workshop will probe questions of adaptation, heritage, and resilience in the face of rising seas. To be hosted at Università Iuav di Venezia.</p>
+          <div style="margin-top:2rem;display:flex;gap:.6rem;flex-wrap:wrap;">
+            <span style="font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:#5b5a50;border:1px solid rgba(21,20,15,.15);padding:.3rem .7rem;border-radius:20px;">Water Urbanism</span>
+            <span style="font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:#5b5a50;border:1px solid rgba(21,20,15,.15);padding:.3rem .7rem;border-radius:20px;">Heritage</span>
+            <span style="font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:#5b5a50;border:1px solid rgba(21,20,15,.15);padding:.3rem .7rem;border-radius:20px;">Resilience</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section style="background:#15140f;color:#f4f3f0;padding:7rem 4rem;text-align:center;">
+  <div style="max-width:680px;margin:0 auto;">
+    <span data-reveal style="font-size:.62rem;letter-spacing:.36em;text-transform:uppercase;color:rgba(244,243,240,.35);display:block;margin-bottom:2rem;">Join Us</span>
+    <h2 data-reveal style="font-family:Arial;font-weight:300;font-size:clamp(1.6rem,3.5vw,2.8rem);line-height:1.2;letter-spacing:-.015em;margin-bottom:2rem;">Be part of the next edition</h2>
+    <p data-reveal style="font-size:.95rem;line-height:1.9;color:rgba(244,243,240,.5);margin-bottom:3rem;">Applications for future editions open to architecture students and faculty worldwide. Partner universities, institutions, and sponsors are welcome to get in touch.</p>
+    <div data-reveal style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="index.html#join" style="font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;background:#f4f3f0;color:#15140f;padding:.9rem 2.2rem;border-radius:30px;transition:opacity .2s;">Apply as Student</a>
+      <a href="mailto:jose.remon@xjtlu.edu.cn?cc=njayaweera@uom.lk,adria.sanchez@salle.url.edu&subject=Partnership%20Inquiry%20%E2%80%94%20City%20Scales" style="font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;border:1px solid rgba(244,243,240,.25);color:rgba(244,243,240,.7);padding:.9rem 2.2rem;border-radius:30px;transition:opacity .2s;">Become a Partner</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#15140f;color:rgba(244,243,240,.45);padding:5rem 2.2rem 2rem;border-top:1px solid rgba(244,243,240,.06);">
+  <div id="footer-grid" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3.5rem;">
+    <div>
+      <a href="index.html" style="font-family:Arial;font-weight:500;font-size:1.4rem;color:#f4f3f0;">City Scales</a>
+      <p style="font-size:.82rem;line-height:1.8;margin-top:1.1rem;color:rgba(244,243,240,.35);max-width:340px;">An international academic architecture workshop exploring cities through intercultural collaboration, urban research, and design inquiry.</p>
+      <a href="mailto:cityscales@gmail.com" style="font-size:.72rem;letter-spacing:.06em;color:rgba(244,243,240,.45);margin-top:1.2rem;display:block;">cityscales@gmail.com</a>
+    </div>
+    <div>
+      <h4 style="font-size:.56rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(244,243,240,.3);margin-bottom:1.1rem;">Programme</h4>
+      <div style="display:flex;flex-direction:column;gap:.6rem;">
+        <a href="index.html#about" style="font-size:.82rem;color:rgba(244,243,240,.4);">About</a>
+        <a href="cities.html" style="font-size:.82rem;color:rgba(244,243,240,.4);">Editions</a>
+        <a href="index.html#process" style="font-size:.82rem;color:rgba(244,243,240,.4);">Process</a>
+      </div>
+    </div>
+    <div>
+      <h4 style="font-size:.56rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(244,243,240,.3);margin-bottom:1.1rem;">Network</h4>
+      <div style="display:flex;flex-direction:column;gap:.6rem;">
+        <a href="#" style="font-size:.82rem;color:rgba(244,243,240,.4);">Universities</a>
+        <a href="people.html" style="font-size:.82rem;color:rgba(244,243,240,.4);">People</a>
+        <a href="#" style="font-size:.82rem;color:rgba(244,243,240,.4);">Alumni</a>
+      </div>
+    </div>
+    <div>
+      <h4 style="font-size:.56rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(244,243,240,.3);margin-bottom:1.1rem;">Connect</h4>
+      <div style="display:flex;flex-direction:column;gap:.6rem;">
+        <a href="#" style="font-size:.82rem;color:rgba(244,243,240,.4);">Instagram</a>
+        <a href="#" style="font-size:.82rem;color:rgba(244,243,240,.4);">LinkedIn</a>
+        <a href="index.html#join" style="font-size:.82rem;color:rgba(244,243,240,.4);">Apply</a>
+      </div>
+    </div>
+  </div>
+  <div id="footer-bottom" style="max-width:1200px;margin:0 auto;border-top:1px solid rgba(244,243,240,.1);padding-top:1.5rem;display:flex;justify-content:space-between;font-size:.6rem;letter-spacing:.1em;color:rgba(244,243,240,.25);">
+    <span>© 2026 City Scales International Workshop</span>
+    <span>Colombo · Barcelona · Shanghai · Tokyo–Tsukuba</span>
+  </div>
+</footer>
+
+<style>
+  @keyframes pulse {
+    0%,100%{opacity:1;transform:scale(1)}
+    50%{opacity:.5;transform:scale(1.3)}
+  }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* Nav hover */
+  document.getElementById('navPanel').querySelectorAll('a').forEach(a => {
+    a.addEventListener('mouseenter', () => a.style.background = 'rgba(244,243,240,.14)');
+    a.addEventListener('mouseleave', () => {
+      if (!a.style.background.includes('f4f3f0')) a.style.background = 'transparent';
+    });
+  });
+
+  /* Hide placeholder divs when the real image loads successfully */
+  document.querySelectorAll('.img-placeholder').forEach(placeholder => {
+    const img = placeholder.parentElement.querySelector('img');
+    if (!img) return;
+    if (img.complete && img.naturalWidth > 0) {
+      placeholder.style.display = 'none';
+    } else {
+      img.addEventListener('load', () => { placeholder.style.display = 'none'; });
+      img.addEventListener('error', () => { img.style.display = 'none'; });
+    }
+  });
+
+  /* Scroll reveal */
+  const io = new IntersectionObserver(es => {
+    es.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'none';
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -4% 0px' });
+
+  document.querySelectorAll('[data-reveal]').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1)';
+    io.observe(el);
+  });
+
+});
+</script>
+</body>
+</html>
