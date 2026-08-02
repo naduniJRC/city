@@ -7,7 +7,7 @@
   <meta name="description" content="Meet the architects, educators, and researchers behind the City Scales international architecture workshop.">
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
-    html{scroll-behavior:smooth;overflow-x:hidden;}
+    html{scroll-behavior:smooth;overflow-x:hidden;scroll-padding-top:80px;}
     body{font-family:Arial,sans-serif;background:#f4f3f0;color:#15140f;-webkit-font-smoothing:antialiased;}
     ::selection{background:#15140f;color:#f4f3f0;}
     a{color:inherit;text-decoration:none;}
@@ -27,6 +27,8 @@
     }
     @media(max-width:640px){
       .founders-grid{grid-template-columns:1fr!important}
+      .founders-grid>div{flex-direction:row!important;align-items:flex-start!important;gap:1.2rem!important;}
+      .founders-grid>div>div:first-child{width:90px!important;min-width:90px!important;aspect-ratio:auto!important;height:115px!important;}
       .coord-wrap{grid-template-columns:1fr!important}
       .coord-card{grid-template-columns:100px 1fr!important;gap:1.5rem!important;padding:2.5rem 1.5rem!important}
       .coord-photo{width:100px!important;height:130px!important}
@@ -67,9 +69,9 @@
       .nav-links{display:none!important;}
       .nav-ham{display:flex!important;}
       .collab-card>div:first-child{width:100%!important;min-width:0!important;}
-      .partner-grid{flex-wrap:wrap!important;justify-content:center!important;gap:3rem 0!important;}
-      .partner-logo{max-width:42%!important;flex:none!important;}
-      .partner-sec{padding:4.5rem 1.5rem!important;}
+      .partner-grid{grid-template-columns:repeat(2,1fr)!important;}
+      .partner-cell{padding:2.8rem 1.5rem!important;}
+      .partner-sec{padding:5rem 1.5rem!important;}
     }
     .partner-logo{filter:grayscale(100%)!important;opacity:.55;transition:opacity .35s ease;}
     .partner-cell{transition:background .3s ease;}
@@ -140,7 +142,6 @@
           <span style="font-size:.52rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(244,243,240,.35);display:block;margin-bottom:.5rem;">Collaborator</span>
           <h3 style="font-family:Arial;font-weight:400;font-size:1rem;line-height:1.2;letter-spacing:-.01em;margin-bottom:.35rem;">Josef</h3>
           <span style="font-size:.65rem;letter-spacing:.05em;color:rgba(244,243,240,.4);display:block;margin-bottom:.8rem;">University · Country</span>
-          <p style="font-size:.78rem;line-height:1.75;color:rgba(244,243,240,.5);">Bio to be added.</p>
         </div>
       </div>
 
@@ -156,7 +157,6 @@
           <span style="font-size:.52rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(244,243,240,.35);display:block;margin-bottom:.5rem;">Collaborator</span>
           <h3 style="font-family:Arial;font-weight:400;font-size:1rem;line-height:1.2;letter-spacing:-.01em;margin-bottom:.35rem;">Ismael</h3>
           <span style="font-size:.65rem;letter-spacing:.05em;color:rgba(244,243,240,.4);display:block;margin-bottom:.8rem;">University · Country</span>
-          <p style="font-size:.78rem;line-height:1.75;color:rgba(244,243,240,.5);">Bio to be added.</p>
         </div>
       </div>
 
@@ -176,17 +176,17 @@
         </div>
       </div>
 
-      <!-- Adrià Sánchez -->
+      <!-- Adrià S. Llorens -->
       <div data-reveal style="display:flex;flex-direction:column;gap:1.2rem;">
         <div style="width:100%;aspect-ratio:3/4;overflow:hidden;background:#272520;position:relative;">
-          <img src="assets/img/adria.jpeg" alt="Adrià Sánchez" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <img src="assets/img/adria.jpeg" alt="Adrià S. Llorens" style="width:100%;height:100%;object-fit:cover;display:block;">
           <div class="img-placeholder" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(45deg,#222120 0 10px,#272520 10px 20px);">
             <span style="font-family:Arial;font-weight:900;font-size:3rem;color:rgba(244,243,240,.04);letter-spacing:-.04em;">AS</span>
           </div>
         </div>
         <div>
           <span style="font-size:.52rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(244,243,240,.35);display:block;margin-bottom:.5rem;">Collaborator</span>
-          <h3 style="font-family:Arial;font-weight:400;font-size:1rem;line-height:1.2;letter-spacing:-.01em;margin-bottom:.35rem;">Adrià Sánchez</h3>
+          <h3 style="font-family:Arial;font-weight:400;font-size:1rem;line-height:1.2;letter-spacing:-.01em;margin-bottom:.35rem;">Adrià S. Llorens</h3>
           <span style="font-size:.65rem;letter-spacing:.05em;color:rgba(244,243,240,.4);display:block;margin-bottom:.8rem;">La Salle – URL Barcelona · Spain</span>
           <p style="font-size:.78rem;line-height:1.75;color:rgba(244,243,240,.5);">Associate Professor at La Salle Campus Barcelona, Universitat Ramon Llull. Research engages with Mediterranean urban scales and public space.</p>
         </div>
@@ -218,7 +218,6 @@
           <span style="font-size:.5rem;letter-spacing:.26em;text-transform:uppercase;color:#9b9a92;display:block;margin-bottom:.5rem;">Collaborator</span>
           <h3 style="font-family:Arial;font-weight:400;font-size:.95rem;line-height:1.2;letter-spacing:-.01em;color:#15140f;margin-bottom:.35rem;">Yamada</h3>
           <span style="font-size:.62rem;letter-spacing:.04em;color:#9b9a92;display:block;margin-bottom:.8rem;">University · Country</span>
-          <p style="font-size:.75rem;line-height:1.75;color:#5b5a50;">Bio to be added.</p>
         </div>
       </div>
 
@@ -234,7 +233,6 @@
           <span style="font-size:.5rem;letter-spacing:.26em;text-transform:uppercase;color:#9b9a92;display:block;margin-bottom:.5rem;">Collaborator</span>
           <h3 style="font-family:Arial;font-weight:400;font-size:.95rem;line-height:1.2;letter-spacing:-.01em;color:#15140f;margin-bottom:.35rem;">Sergio</h3>
           <span style="font-size:.62rem;letter-spacing:.04em;color:#9b9a92;display:block;margin-bottom:.8rem;">University · Country</span>
-          <p style="font-size:.75rem;line-height:1.75;color:#5b5a50;">Bio to be added.</p>
         </div>
       </div>
 
@@ -250,7 +248,6 @@
           <span style="font-size:.5rem;letter-spacing:.26em;text-transform:uppercase;color:#9b9a92;display:block;margin-bottom:.5rem;">Collaborator</span>
           <h3 style="font-family:Arial;font-weight:400;font-size:.95rem;line-height:1.2;letter-spacing:-.01em;color:#15140f;margin-bottom:.35rem;">Alessandro</h3>
           <span style="font-size:.62rem;letter-spacing:.04em;color:#9b9a92;display:block;margin-bottom:.8rem;">University · Country</span>
-          <p style="font-size:.75rem;line-height:1.75;color:#5b5a50;">Bio to be added.</p>
         </div>
       </div>
 
@@ -259,26 +256,31 @@
 </section>
 
 <!-- PARTNER UNIVERSITIES -->
-<section class="partner-sec" style="background:#f4f3f0;padding:6rem 4rem;border-top:1px solid rgba(21,20,15,.1);border-bottom:1px solid rgba(21,20,15,.1);">
-  <div style="max-width:1050px;margin:0 auto;position:relative;overflow:hidden;">
-
-    <!-- Faded editorial number -->
-    <span aria-hidden="true" style="position:absolute;font-family:Arial;font-weight:900;font-size:clamp(9rem,16vw,15rem);color:rgba(21,20,15,.04);letter-spacing:-.04em;line-height:1;right:-1rem;top:50%;transform:translateY(-50%);pointer-events:none;user-select:none;">04</span>
-
-    <!-- Label row -->
-    <div data-reveal style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4.5rem;">
-      <span style="font-size:.58rem;letter-spacing:.32em;text-transform:uppercase;color:#9b9a92;">Partner Universities</span>
-      <span style="font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(21,20,15,.2);">04 Institutions</span>
+<section class="partner-sec" style="background:#f4f3f0;padding:7rem 4rem;">
+  <div style="max-width:1050px;margin:0 auto;">
+    <div data-reveal style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4rem;border-bottom:1px solid rgba(21,20,15,.12);padding-bottom:1.4rem;">
+      <h2 style="font-family:Arial;font-weight:300;font-size:clamp(1.4rem,2.8vw,2.4rem);letter-spacing:-.01em;color:#15140f;">Partner Universities</h2>
+      <span style="font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:#9b9a92;">04 Institutions</span>
     </div>
+    <div class="partner-grid" data-reveal style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(21,20,15,.1);">
 
-    <!-- Logos -->
-    <div class="partner-grid" data-reveal style="display:flex;align-items:center;justify-content:space-between;gap:4rem;">
-      <img class="partner-logo" src="assets/img/partner-one.png" alt="Partner University" style="flex:1;max-width:160px;max-height:56px;object-fit:contain;">
-      <img class="partner-logo" src="assets/img/partner-two.png" alt="Partner University" style="flex:1;max-width:160px;max-height:56px;object-fit:contain;">
-      <img class="partner-logo" src="assets/img/partner-three.png" alt="Partner University" style="flex:1;max-width:160px;max-height:56px;object-fit:contain;">
-      <img class="partner-logo" src="assets/img/partner-four.png" alt="Partner University" style="flex:1;max-width:160px;max-height:56px;object-fit:contain;">
+      <div class="partner-cell" style="background:#f4f3f0;padding:3.5rem 2.5rem;display:flex;align-items:center;justify-content:center;min-height:160px;">
+        <img class="partner-logo" src="assets/img/partner-one.png" alt="Partner University" style="max-width:140px;max-height:64px;width:100%;object-fit:contain;">
+      </div>
+
+      <div class="partner-cell" style="background:#f4f3f0;padding:3.5rem 2.5rem;display:flex;align-items:center;justify-content:center;min-height:160px;">
+        <img class="partner-logo" src="assets/img/partner-two.png" alt="Partner University" style="max-width:140px;max-height:64px;width:100%;object-fit:contain;">
+      </div>
+
+      <div class="partner-cell" style="background:#f4f3f0;padding:3.5rem 2.5rem;display:flex;align-items:center;justify-content:center;min-height:160px;">
+        <img class="partner-logo" src="assets/img/partner-three.png" alt="Partner University" style="max-width:140px;max-height:64px;width:100%;object-fit:contain;">
+      </div>
+
+      <div class="partner-cell" style="background:#f4f3f0;padding:3.5rem 2.5rem;display:flex;align-items:center;justify-content:center;min-height:160px;">
+        <img class="partner-logo" src="assets/img/partner-four.png" alt="Partner University" style="max-width:140px;max-height:64px;width:100%;object-fit:contain;">
+      </div>
+
     </div>
-
   </div>
 </section>
 
@@ -287,9 +289,9 @@
   <div style="max-width:1050px;margin:0 auto;">
     <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:3.5rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(244,243,240,.08);">
       <h2 style="font-family:Arial;font-weight:300;font-size:clamp(1.4rem,2.8vw,2.4rem);letter-spacing:-.01em;color:#f4f3f0;">Tutors</h2>
-      <span style="font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(244,243,240,.28);">57 Educators</span>
+      <span style="font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(244,243,240,.28);">56 Educators</span>
     </div>
-    <p data-reveal style="font-family:Arial;font-weight:300;font-size:clamp(.75rem,1.1vw,.9rem);line-height:2.5;color:rgba(244,243,240,.7);letter-spacing:.015em;">Abe Takuya<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Adriá S. Llorens<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Ando Kunihiro<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Anishka Hettiarachchi<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Candice Chen<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Davide Lombardi<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Emanuela Corti<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Feng Lei<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Gamini Weerasinghe<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>GianMarco Longo<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Girolamo Barbaccia<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Hanazato Toshihiro<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Ismael Abedin Ingelmo<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Ivan Ballesteros<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Iwata Yukari<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Janaka Wijesundara<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>John Latto<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>José Remón<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Josep Ferrando<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Juan Carlos Dell'Asta<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Kato Osamu<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Kavindra Herath<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Leyuan Jiang<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Lorenzo Kárász<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Marc Aurel Schnabel<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Mihiri Seekkuarachchige<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Muraji Yutaro<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Nadeeka Jayaweera<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Narein Perera<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Nawit Ongsavangchai<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Ominda Nanayakkara<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Paul Diaz<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Pedro Garcia<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Rajitha Katugaha<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Roberto Podda<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Roger Paez<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Sabrina Wang<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Sebastian Harris<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Senaka Dharmathileke<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Shaleeni Coorey<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Silvia Albano<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Sugisaki Hirotaka<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Tanaka Mari<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Teo Hidalgo Nacher<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Ueda Koki<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Varuna De Silva<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Vijesandiran Vidhushan<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Xudong Liu<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Yamada Kyota<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Yamaga Itsuki<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Yiping Dong<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Yonekawa Shota<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Yuqi Zhai<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Zhehui Chang<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Chinami Hashimoto<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Ichikita Kohei</p>
+    <p data-reveal style="font-family:Arial;font-weight:300;font-size:clamp(.75rem,1.1vw,.9rem);line-height:2.5;color:rgba(244,243,240,.7);letter-spacing:.015em;">Abe Takuya<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Adrià S. Llorens<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Ando Kunihiro<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Anishka Hettiarachchi<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Candice Chen<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Chinami Hashimoto<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Davide Lombardi<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Emanuela Corti<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Feng Lei<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Gamini Weerasinghe<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>GianMarco Longo<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Girolamo Barbaccia<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Hanazato Toshihiro<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Ichikita Kohei <span style="color:rgba(244,243,240,.28);font-size:.7em;">(Teaching Assistant)</span><span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Ismael Abedin Ingelmo<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Ivan Ballesteros<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Iwata Yukari<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Janaka Wijesundara<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>John Latto<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>José Remón<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Josep Ferrando<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Juan Carlos Dell'Asta<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Kato Osamu<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Kavindra Herath<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Leyuan Jiang<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Lorenzo Kárász<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Marc Aurel Schnabel<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Mihiri Seekkuarachchige<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Muraji Yutaro<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Nadeeka Jayaweera<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Narein Perera<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Nawit Ongsavangchai<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Ominda Nanayakkara<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Paul Diaz<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Pedro Garcia<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Rajitha Katugaha<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Roberto Podda<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Roger Paez<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Sabrina Wang<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Sebastian Harris<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Senaka Dharmathileke<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Shaleeni Coorey<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Silvia Albano<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Sugisaki Hirotaka<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Tanaka Mari<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Teo Hidalgo Nacher<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Ueda Koki <span style="color:rgba(244,243,240,.28);font-size:.7em;">(Teaching Assistant)</span><span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Varuna De Silva<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Vijesandiran Vidhushan<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Xudong Liu<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Yamada Kyota<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Yamaga Itsuki<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Yiping Dong<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Yonekawa Shota<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Yuqi Zhai<span style="color:rgba(244,243,240,.12);padding:0 .6em;">/</span>Zhehui Chang</p>
   </div>
 </section>
 
@@ -298,9 +300,9 @@
   <div style="max-width:1050px;margin:0 auto;">
     <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:3.5rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(21,20,15,.08);">
       <h2 style="font-family:Arial;font-weight:300;font-size:clamp(1.4rem,2.8vw,2.4rem);letter-spacing:-.01em;color:#15140f;">Alumni</h2>
-      <span style="font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:#9b9a92;">36 Participants</span>
+      <span style="font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:#9b9a92;">71 Participants</span>
     </div>
-    <p data-reveal style="font-family:Arial;font-weight:300;font-size:clamp(.75rem,1.1vw,.9rem);line-height:2.5;color:rgba(21,20,15,.7);letter-spacing:.015em;">Aleksandra Anna Jankowska<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Anjana Gunawardena<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Ashen Krishantha<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Bhagya Ranaweera<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Dalshan Dasanayake<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Darina Ledeneva<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Dheshan Kumar<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Gerardo Manuel Rodriguez<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Hazoora Muzathik<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Jucheng Gao<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Kamalathasan Ranjani<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Kamasarani Gamlath<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Liuyu Feng<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Maria Meda Castells<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Maria Natalia Dan<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Naduni Gamage<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Nileshi Harasgama<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Nirasha Akalanka<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Pavani Samarasinghe<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Premesh Balapitiya<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Rebecca Zheng<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Rui Sun<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Ruitao Yang<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Sachith Vithanage<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Sevda Dragomirova Dragneva<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Sihan Chen<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Suubi Olive Byansi<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Thilakshi Chathurika<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Vihanga Perera<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Vittoria Picerno<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Weiyi Huang<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Yicheng Wang<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Yinang Huang<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Yue Ji<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Yuxuan Ma<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Zijian Zhang</p>
+    <p data-reveal style="font-family:Arial;font-weight:300;font-size:clamp(.75rem,1.1vw,.9rem);line-height:2.5;color:rgba(21,20,15,.7);letter-spacing:.015em;">Abera Selam Gebrekirstos<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Adrián Brautigam Trullà<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Aleksandra Anna Jankowska<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Alexa, Céline Bohon<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Alexandre Thomann<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Anjana Gunawardena<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Antonia-Maria Taroiu<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Ashen Krishantha<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Bhagya Ranaweera<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Bozhang Zhu<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Chiba Eimi<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Cho Sunmin<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Clémentine Malchiodi<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Dalshan Dasanayake<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Darina Ledeneva<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Demilda Christopher<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Dheshan Kumar<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Eliza-Elena Dobrescu<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Gerardo Manuel Rodriguez<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Gustavs Grants<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Hayashi Michiko<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Hazoora Muzathik<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Heshini Ganegedara<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Ichino Haana<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Kamalathasan Ranjani<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Kamasarani Gamlath<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Kaneko Yusuke<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Kano Oikawa<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Kawakami Shintaro<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Liuyu Feng<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Maleesha Jothirathna<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Maria Meda Castells<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Maria Natalia Dan<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Matheesha Ranathunga<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Matsuoka Ayaka<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Minuthi Ranathunge<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Mingda Liao<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Naduni Gamage<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Nileshi Harasgama<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Nirasha Akalanka<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Nitta Himari<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Osugi Kosuke<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Pavani Samarasinghe<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Pinethmi Assalaarachchi<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Piriyangan Thavachelvan<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Premesh Balapitiya<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Rares-Stefan Colea<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Rebecca Zheng<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Ridmi Aruggoda<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Rui Sun<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Ruitao Yang<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Sachith Vithanage<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Sato Ko<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Sean Naoto Matsunaga<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Senitha Pasandil<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Sevda Dragomirova Dragneva<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Shunya Sawada<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Sihan Chen<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Suubi Olive Byansi<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Takagi Madoka<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Thilakshi Chathurika<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Victoria Gabriela Martin Pariente<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Vihanga Perera<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Vittoria Picerno<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Weiyi Huang<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Yasasvie Jayalath<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Yicheng Wang<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Yinang Huang<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Yue Ji<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Yuxuan Ma<span style="color:rgba(21,20,15,.12);padding:0 .6em;">/</span>Zijian Zhang</p>
   </div>
 </section>
 
