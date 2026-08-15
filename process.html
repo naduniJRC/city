@@ -346,10 +346,10 @@
       <span style="font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(244,243,240,.25);">04 Cities · 08 Photographs</span>
     </div>
 
-    <!-- rows: each splits page 50/50 — content rectangle one side, black the other -->
+    <!-- rows: each splits page 50/50 — content rectangle one side, colored empty the other -->
 
-    <!-- 01 COLOMBO — content LEFT [portrait | landscape+text below], empty RIGHT -->
-    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:4px;">
+    <!-- 01 COLOMBO — content LEFT [portrait | landscape+text], empty RIGHT -->
+    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:4px;">
       <div style="display:grid;grid-template-columns:2fr 3fr;gap:4px;height:490px;overflow:hidden;">
         <div style="overflow:hidden;">
           <img src="assets/img/colombo-img-one.jpg" alt="Colombo Workshop" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
@@ -358,31 +358,27 @@
           <div style="overflow:hidden;flex-shrink:0;">
             <img src="assets/img/colombo-img-two.jpg" alt="Colombo Workshop" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .5s ease;" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
           </div>
-          <div style="flex:1;display:flex;align-items:center;padding:1.2rem 1.5rem;">
-            <div>
-              <h3 style="font-family:Arial;font-weight:900;font-size:clamp(2.5rem,4.5vw,4rem);letter-spacing:-.05em;color:rgba(97,29,44,.4);line-height:.88;text-transform:uppercase;user-select:none;margin-bottom:.5rem;">Colombo</h3>
-              <span style="font-size:.46rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(244,243,240,.2);">Edition 01 · Sri Lanka · 2024</span>
-            </div>
-          </div>
+          <div style="flex:1;background:rgb(97,29,44);"></div>
         </div>
       </div>
-      <div></div>
+      <div style="background:rgb(97,29,44);overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:1.8rem;">
+        <span style="font-family:Arial;font-weight:900;font-size:clamp(2.8rem,5vw,4.5rem);color:rgba(255,255,255,.13);letter-spacing:-.05em;white-space:nowrap;user-select:none;pointer-events:none;">Colombo</span>
+        <span style="font-size:.46rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:.6rem;">Edition 01 · Sri Lanka · 2024</span>
+      </div>
     </div>
 
-    <!-- 02 BARCELONA — empty LEFT, content RIGHT [landscape+text below | portrait] -->
-    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:4px;">
-      <div></div>
+    <!-- 02 BARCELONA — empty LEFT, content RIGHT [landscape+text | portrait] -->
+    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:4px;">
+      <div style="background:rgb(128,145,163);overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:1.8rem;">
+        <span style="font-family:Arial;font-weight:900;font-size:clamp(2.8rem,5vw,4.5rem);color:rgba(255,255,255,.15);letter-spacing:-.05em;white-space:nowrap;user-select:none;pointer-events:none;">Barcelona</span>
+        <span style="font-size:.46rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:.6rem;">Edition 02 · Spain · 2025</span>
+      </div>
       <div style="display:grid;grid-template-columns:3fr 2fr;gap:4px;height:490px;overflow:hidden;">
         <div style="display:flex;flex-direction:column;overflow:hidden;">
           <div style="overflow:hidden;flex-shrink:0;">
             <img src="assets/img/barcelona-img-one.jpg" alt="Barcelona Workshop" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .5s ease;" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
           </div>
-          <div style="flex:1;display:flex;align-items:center;padding:1.2rem 1.5rem;">
-            <div>
-              <h3 style="font-family:Arial;font-weight:900;font-size:clamp(2.5rem,4.5vw,4rem);letter-spacing:-.05em;color:rgba(128,145,163,.45);line-height:.88;text-transform:uppercase;user-select:none;margin-bottom:.5rem;">Barcelona</h3>
-              <span style="font-size:.46rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(244,243,240,.2);">Edition 02 · Spain · 2025</span>
-            </div>
-          </div>
+          <div style="flex:1;background:rgb(128,145,163);"></div>
         </div>
         <div style="overflow:hidden;">
           <img src="assets/img/barcelona-img-two.jpg" alt="Barcelona Workshop" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
@@ -390,44 +386,40 @@
       </div>
     </div>
 
-    <!-- 03 SHANGHAI — content LEFT [text above + landscape | portrait], empty RIGHT -->
-    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:4px;">
-      <div style="display:grid;grid-template-columns:3fr 2fr;gap:4px;height:490px;overflow:hidden;">
+    <!-- 03 SHANGHAI — content LEFT [portrait | text+landscape], empty RIGHT -->
+    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:4px;">
+      <div style="display:grid;grid-template-columns:2fr 3fr;gap:4px;height:490px;overflow:hidden;">
+        <div style="overflow:hidden;">
+          <img src="assets/img/shanghai-img-one.jpeg" alt="Shanghai Workshop" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
+        </div>
         <div style="display:flex;flex-direction:column;overflow:hidden;">
-          <div style="flex:1;display:flex;align-items:center;padding:1.2rem 1.5rem;">
-            <div>
-              <h3 style="font-family:Arial;font-weight:900;font-size:clamp(2.5rem,4.5vw,4rem);letter-spacing:-.05em;color:rgba(241,193,127,.38);line-height:.88;text-transform:uppercase;user-select:none;margin-bottom:.5rem;">Shanghai</h3>
-              <span style="font-size:.46rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(244,243,240,.2);">Edition 03 · China · 2025</span>
-            </div>
-          </div>
+          <div style="flex:1;background:rgb(241,193,127);"></div>
           <div style="overflow:hidden;flex-shrink:0;">
             <img src="assets/img/shanghai-img-two.jpeg" alt="Shanghai Workshop" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .5s ease;" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
           </div>
         </div>
-        <div style="overflow:hidden;">
-          <img src="assets/img/shanghai-img-one.jpeg" alt="Shanghai Workshop" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
-        </div>
       </div>
-      <div></div>
+      <div style="background:rgb(241,193,127);overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:1.8rem;">
+        <span style="font-family:Arial;font-weight:900;font-size:clamp(2.8rem,5vw,4.5rem);color:rgba(255,255,255,.2);letter-spacing:-.05em;white-space:nowrap;user-select:none;pointer-events:none;">Shanghai</span>
+        <span style="font-size:.46rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:.6rem;">Edition 03 · China · 2025</span>
+      </div>
     </div>
 
-    <!-- 04 TOKYO — empty LEFT, content RIGHT [portrait | text above + landscape] -->
-    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:4px;">
-      <div></div>
-      <div style="display:grid;grid-template-columns:2fr 3fr;gap:4px;height:490px;overflow:hidden;">
-        <div style="overflow:hidden;">
-          <img src="assets/img/tokyo-img-two.jpeg" alt="Tokyo Workshop" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
-        </div>
+    <!-- 04 TOKYO — empty LEFT, content RIGHT [text+landscape | portrait] -->
+    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:4px;">
+      <div style="background:rgb(96,90,162);overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:1.8rem;">
+        <span style="font-family:Arial;font-weight:900;font-size:clamp(2.8rem,5vw,4.5rem);color:rgba(255,255,255,.15);letter-spacing:-.05em;white-space:nowrap;user-select:none;pointer-events:none;">Tokyo</span>
+        <span style="font-size:.46rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:.6rem;">Edition 04 · Japan · 2026</span>
+      </div>
+      <div style="display:grid;grid-template-columns:3fr 2fr;gap:4px;height:490px;overflow:hidden;">
         <div style="display:flex;flex-direction:column;overflow:hidden;">
-          <div style="flex:1;display:flex;align-items:center;padding:1.2rem 1.5rem;">
-            <div>
-              <h3 style="font-family:Arial;font-weight:900;font-size:clamp(2.5rem,4.5vw,4rem);letter-spacing:-.05em;color:rgba(96,90,162,.38);line-height:.88;text-transform:uppercase;user-select:none;margin-bottom:.5rem;">Tokyo</h3>
-              <span style="font-size:.46rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(244,243,240,.2);">Edition 04 · Japan · 2026</span>
-            </div>
-          </div>
+          <div style="flex:1;background:rgb(96,90,162);"></div>
           <div style="overflow:hidden;flex-shrink:0;">
             <img src="assets/img/tokyo-img-one.jpeg" alt="Tokyo Workshop" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .5s ease;" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
           </div>
+        </div>
+        <div style="overflow:hidden;">
+          <img src="assets/img/tokyo-img-two.jpeg" alt="Tokyo Workshop" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
         </div>
       </div>
     </div>
