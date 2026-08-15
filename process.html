@@ -21,6 +21,8 @@
     .bento-hrs{font-family:Arial;font-weight:900;line-height:1;transition:transform .3s ease;}
     .bento-card:hover .bento-hrs{transform:scale(1.04);}
 
+    .field-row{display:grid;grid-template-columns:160px 1fr;gap:3.5rem;align-items:start;padding:3.5rem 0;border-top:1px solid rgba(244,243,240,.07);}
+    .field-photos{display:grid;gap:10px;}
     @media(max-width:900px){
       .city-split{grid-template-columns:1fr!important}
       .city-split-rev{grid-template-columns:1fr!important}
@@ -29,6 +31,7 @@
       .city-split-rev .city-img-col{order:1!important}
       .hero-txt{right:1.5rem!important;left:1.5rem!important;bottom:10%!important}
       .activities-sec{padding:5rem 2rem!important}
+      .field-row{grid-template-columns:1fr!important;gap:1.5rem!important;padding:2.5rem 0!important;}
       .proj-header{padding:4rem 2rem 2rem!important}
     }
     @media(max-width:768px){
@@ -55,6 +58,8 @@
       .obj-inner{grid-template-columns:1fr!important;padding:2rem 1.2rem!important;}
       .obj-desc{grid-column:1!important;}
       .activities-sec{padding:3rem 1.2rem!important;}
+      .bento-hrs{font-size:2rem!important;}
+      .bento-card{min-height:160px!important;padding:1.8rem!important;}
     }
     .nav-links{display:flex;align-items:center;gap:.4rem;}
     .nav-ham{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:.45rem .65rem;border-radius:20px;}
@@ -64,7 +69,7 @@
     .nav-ham.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
     #mobMenu{position:fixed;inset:0;z-index:199;background:#15140f;display:flex;flex-direction:column;justify-content:center;padding:3rem 2.5rem;opacity:0;pointer-events:none;transition:opacity .3s ease,transform .3s ease;transform:translateY(-8px);}
     #mobMenu.open{opacity:1;pointer-events:auto;transform:none;}
-    .mob-link{font-family:Arial;font-weight:900;font-size:clamp(2rem,10vw,3.6rem);color:rgba(244,243,240,.65);text-decoration:none;letter-spacing:-.03em;line-height:1.15;display:block;transition:color .2s;}
+    .mob-link{font-family:Arial;font-weight:900;font-size:clamp(1.2rem,6vw,2rem);color:rgba(244,243,240,.65);text-decoration:none;letter-spacing:-.03em;line-height:1.15;display:block;transition:color .2s;}
     .mob-link:hover,.mob-link.mob-active{color:#f4f3f0;}
     .mob-close{position:absolute;top:1.4rem;right:1.5rem;background:none;border:none;color:rgba(244,243,240,.35);font-size:1.8rem;cursor:pointer;padding:.4rem;line-height:1;transition:color .2s;}
     .mob-close:hover{color:#f4f3f0;}
@@ -92,9 +97,9 @@
 </div>
 
 <!-- ============ HERO ============ -->
-<section style="height:65vh;position:relative;overflow:hidden;background:#15140f;">
+<section style="height:65vh;position:relative;overflow:hidden;background:rgb(85,118,124);">
   <div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(244,243,240,.022) 0 1px,transparent 1px 100px),repeating-linear-gradient(90deg,rgba(244,243,240,.022) 0 1px,transparent 1px 100px);pointer-events:none;"></div>
-  <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(10,10,10,.55) 100%);"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(60,90,95,.65) 100%);"></div>
   <div class="hero-txt" style="position:absolute;bottom:18%;right:12rem;z-index:2;text-align:left;">
     <h1 style="font-family:Arial;font-weight:900;color:#f4f3f0;font-size:clamp(2.2rem,5vw,4.5rem);line-height:.9;letter-spacing:-.025em;">Process</h1>
     <p style="font-size:clamp(.6rem,.85vw,.8rem);text-transform:uppercase;color:#f4f3f0;margin-top:.9rem;opacity:.85;letter-spacing:.22em;">The workshop journey</p>
@@ -328,6 +333,108 @@
 
 <!-- ============ CITY PROJECTS ============ -->
 
+<!-- WORKSHOP IN ACTION -->
+<section style="background:#15140f;padding:7rem 4rem;">
+  <div style="max-width:1200px;margin:0 auto;">
+
+    <!-- Header — consistent with rest of page -->
+    <div data-reveal style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:4rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(244,243,240,.1);">
+      <div>
+        <span style="font-size:.58rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(244,243,240,.3);display:block;margin-bottom:.7rem;">Workshop Documentation</span>
+        <h2 style="font-family:Arial;font-weight:300;font-size:clamp(1.6rem,3vw,2.6rem);letter-spacing:-.02em;color:#f4f3f0;">In the Field</h2>
+      </div>
+      <span style="font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(244,243,240,.25);">04 Cities · 08 Photographs</span>
+    </div>
+
+    <!-- rows: each splits page 50/50 — content rectangle one side, black the other -->
+
+    <!-- 01 COLOMBO — content LEFT [portrait | landscape+text below], empty RIGHT -->
+    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:4px;">
+      <div style="display:grid;grid-template-columns:2fr 3fr;gap:4px;height:490px;overflow:hidden;">
+        <div style="overflow:hidden;">
+          <img src="assets/img/colombo-img-one.jpg" alt="Colombo Workshop" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
+        </div>
+        <div style="display:flex;flex-direction:column;overflow:hidden;">
+          <div style="overflow:hidden;flex-shrink:0;">
+            <img src="assets/img/colombo-img-two.jpg" alt="Colombo Workshop" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .5s ease;" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
+          </div>
+          <div style="flex:1;display:flex;align-items:center;padding:1.2rem 1.5rem;">
+            <div>
+              <h3 style="font-family:Arial;font-weight:900;font-size:clamp(2.5rem,4.5vw,4rem);letter-spacing:-.05em;color:rgba(97,29,44,.4);line-height:.88;text-transform:uppercase;user-select:none;margin-bottom:.5rem;">Colombo</h3>
+              <span style="font-size:.46rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(244,243,240,.2);">Edition 01 · Sri Lanka · 2024</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div></div>
+    </div>
+
+    <!-- 02 BARCELONA — empty LEFT, content RIGHT [landscape+text below | portrait] -->
+    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:4px;">
+      <div></div>
+      <div style="display:grid;grid-template-columns:3fr 2fr;gap:4px;height:490px;overflow:hidden;">
+        <div style="display:flex;flex-direction:column;overflow:hidden;">
+          <div style="overflow:hidden;flex-shrink:0;">
+            <img src="assets/img/barcelona-img-one.jpg" alt="Barcelona Workshop" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .5s ease;" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
+          </div>
+          <div style="flex:1;display:flex;align-items:center;padding:1.2rem 1.5rem;">
+            <div>
+              <h3 style="font-family:Arial;font-weight:900;font-size:clamp(2.5rem,4.5vw,4rem);letter-spacing:-.05em;color:rgba(128,145,163,.45);line-height:.88;text-transform:uppercase;user-select:none;margin-bottom:.5rem;">Barcelona</h3>
+              <span style="font-size:.46rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(244,243,240,.2);">Edition 02 · Spain · 2025</span>
+            </div>
+          </div>
+        </div>
+        <div style="overflow:hidden;">
+          <img src="assets/img/barcelona-img-two.jpg" alt="Barcelona Workshop" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 SHANGHAI — content LEFT [text above + landscape | portrait], empty RIGHT -->
+    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:4px;">
+      <div style="display:grid;grid-template-columns:3fr 2fr;gap:4px;height:490px;overflow:hidden;">
+        <div style="display:flex;flex-direction:column;overflow:hidden;">
+          <div style="flex:1;display:flex;align-items:center;padding:1.2rem 1.5rem;">
+            <div>
+              <h3 style="font-family:Arial;font-weight:900;font-size:clamp(2.5rem,4.5vw,4rem);letter-spacing:-.05em;color:rgba(241,193,127,.38);line-height:.88;text-transform:uppercase;user-select:none;margin-bottom:.5rem;">Shanghai</h3>
+              <span style="font-size:.46rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(244,243,240,.2);">Edition 03 · China · 2025</span>
+            </div>
+          </div>
+          <div style="overflow:hidden;flex-shrink:0;">
+            <img src="assets/img/shanghai-img-two.jpeg" alt="Shanghai Workshop" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .5s ease;" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
+          </div>
+        </div>
+        <div style="overflow:hidden;">
+          <img src="assets/img/shanghai-img-one.jpeg" alt="Shanghai Workshop" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
+        </div>
+      </div>
+      <div></div>
+    </div>
+
+    <!-- 04 TOKYO — empty LEFT, content RIGHT [portrait | text above + landscape] -->
+    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:4px;">
+      <div></div>
+      <div style="display:grid;grid-template-columns:2fr 3fr;gap:4px;height:490px;overflow:hidden;">
+        <div style="overflow:hidden;">
+          <img src="assets/img/tokyo-img-two.jpeg" alt="Tokyo Workshop" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
+        </div>
+        <div style="display:flex;flex-direction:column;overflow:hidden;">
+          <div style="flex:1;display:flex;align-items:center;padding:1.2rem 1.5rem;">
+            <div>
+              <h3 style="font-family:Arial;font-weight:900;font-size:clamp(2.5rem,4.5vw,4rem);letter-spacing:-.05em;color:rgba(96,90,162,.38);line-height:.88;text-transform:uppercase;user-select:none;margin-bottom:.5rem;">Tokyo</h3>
+              <span style="font-size:.46rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(244,243,240,.2);">Edition 04 · Japan · 2026</span>
+            </div>
+          </div>
+          <div style="overflow:hidden;flex-shrink:0;">
+            <img src="assets/img/tokyo-img-one.jpeg" alt="Tokyo Workshop" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .5s ease;" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- Section header -->
 <div class="proj-header" style="background:#f4f3f0;padding:6rem 4.5rem 3rem;">
   <div style="max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(21,20,15,.12);padding-bottom:1.4rem;">
@@ -337,7 +444,7 @@
 </div>
 
 <!-- 04 Tokyo — content left, image right, dark bg -->
-<section class="city-split-rev" style="display:grid;grid-template-columns:1fr 1fr;min-height:80vh;background:#15140f;color:#f4f3f0;">
+<section class="city-split-rev" style="display:grid;grid-template-columns:1fr 1fr;min-height:80vh;background:rgb(96,90,162);color:#f4f3f0;">
   <div class="city-content" style="padding:6rem 4.5rem;display:flex;flex-direction:column;justify-content:center;order:1;">
     <span data-reveal style="font-size:.58rem;letter-spacing:.36em;text-transform:uppercase;color:rgba(244,243,240,.35);display:block;margin-bottom:2rem;">Japan · 9–21 July 2026 · University of Tsukuba</span>
     <h2 data-reveal style="font-family:Arial;font-weight:900;font-size:clamp(2rem,4vw,3.4rem);line-height:.92;letter-spacing:-.03em;color:#f4f3f0;margin-bottom:.8rem;">Tokyo</h2>
@@ -361,7 +468,7 @@
 </section>
 
 <!-- 03 Shanghai — image left, content right, light bg -->
-<section class="city-split" style="display:grid;grid-template-columns:1fr 1fr;min-height:80vh;background:#f4f3f0;">
+<section class="city-split" style="display:grid;grid-template-columns:1fr 1fr;min-height:80vh;background:rgb(241,193,127);">
   <div class="city-img-col" style="position:relative;overflow:hidden;min-height:560px;background:#15140f;">
     <img src="assets/img/shanghai-panel.png" alt="Shanghai" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
     <div style="position:absolute;top:2rem;left:2rem;background:#15140f;color:#f4f3f0;padding:.4rem .9rem;border-radius:30px;">
@@ -385,7 +492,7 @@
 </section>
 
 <!-- 02 Barcelona — content left, image right, dark bg -->
-<section class="city-split-rev" style="display:grid;grid-template-columns:1fr 1fr;min-height:80vh;background:#15140f;color:#f4f3f0;">
+<section class="city-split-rev" style="display:grid;grid-template-columns:1fr 1fr;min-height:80vh;background:rgb(128,145,163);color:#f4f3f0;">
   <div class="city-content" style="padding:6rem 4.5rem;display:flex;flex-direction:column;justify-content:center;order:1;">
     <span data-reveal style="font-size:.58rem;letter-spacing:.36em;text-transform:uppercase;color:rgba(244,243,240,.35);display:block;margin-bottom:2rem;">Spain · February 2025 · Universitat La Salle – Ramon Llull</span>
     <h2 data-reveal style="font-family:Arial;font-weight:900;font-size:clamp(2rem,4vw,3.4rem);line-height:.92;letter-spacing:-.03em;color:#f4f3f0;margin-bottom:.8rem;">Barcelona</h2>
@@ -409,10 +516,10 @@
 </section>
 
 <!-- 01 Colombo — image left, content right, light bg -->
-<section class="city-split" style="display:grid;grid-template-columns:1fr 1fr;min-height:80vh;background:#f4f3f0;">
+<section class="city-split" style="display:grid;grid-template-columns:1fr 1fr;min-height:80vh;background:rgb(97,29,44);">
   <div class="city-img-col" style="position:relative;overflow:hidden;min-height:560px;background:#15140f;">
     <img src="assets/img/colombo-panel.png" alt="Colombo" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
-    <div style="position:absolute;top:2rem;left:2rem;background:#15140f;color:#f4f3f0;padding:.4rem .9rem;border-radius:30px;">
+    <div style="position:absolute;top:2rem;left:2rem;background:#f4f3f0;color:#15140f;padding:.4rem .9rem;border-radius:30px;">
       <span style="font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;">Edition 01</span>
     </div>
     <div style="position:absolute;bottom:2rem;left:2rem;background:rgba(21,20,15,.75);backdrop-filter:blur(6px);color:#f4f3f0;padding:.4rem .9rem;border-radius:30px;">
@@ -420,14 +527,14 @@
     </div>
   </div>
   <div class="city-content" style="padding:6rem 4.5rem;display:flex;flex-direction:column;justify-content:center;">
-    <span data-reveal style="font-size:.58rem;letter-spacing:.36em;text-transform:uppercase;color:#9b9a92;display:block;margin-bottom:2rem;">Sri Lanka · June–July 2024 · University of Moratuwa</span>
-    <h2 data-reveal style="font-family:Arial;font-weight:900;font-size:clamp(2rem,4vw,3.4rem);line-height:.92;letter-spacing:-.03em;color:#15140f;margin-bottom:.8rem;">Colombo</h2>
-    <p data-reveal style="font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:#9b9a92;margin-bottom:2rem;">Adaptive Reuse in Pettah</p>
-    <p data-reveal style="font-size:.95rem;line-height:1.9;color:#5b5a50;max-width:480px;">The context of investigation in Colombo was Pettah, a vibrant historic precinct originally established as a Portuguese port city in the 1500s. The workshop focused on analyzing social, economic, and environmental challenges in the bustling urban landscape where participants worked out adaptive reuse strategies for the Old Town Hall and market buildings. Through site investigations, scaled drawings, and physical models, students developed comprehensive architectural solutions for repurposing these heritage structures, engaging with local stakeholders to ensure contextually sensitive proposals.</p>
+    <span data-reveal style="font-size:.58rem;letter-spacing:.36em;text-transform:uppercase;color:rgba(244,243,240,.35);display:block;margin-bottom:2rem;">Sri Lanka · June–July 2024 · University of Moratuwa</span>
+    <h2 data-reveal style="font-family:Arial;font-weight:900;font-size:clamp(2rem,4vw,3.4rem);line-height:.92;letter-spacing:-.03em;color:#f4f3f0;margin-bottom:.8rem;">Colombo</h2>
+    <p data-reveal style="font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,243,240,.35);margin-bottom:2rem;">Adaptive Reuse in Pettah</p>
+    <p data-reveal style="font-size:.95rem;line-height:1.9;color:rgba(244,243,240,.5);max-width:480px;">The context of investigation in Colombo was Pettah, a vibrant historic precinct originally established as a Portuguese port city in the 1500s. The workshop focused on analyzing social, economic, and environmental challenges in the bustling urban landscape where participants worked out adaptive reuse strategies for the Old Town Hall and market buildings. Through site investigations, scaled drawings, and physical models, students developed comprehensive architectural solutions for repurposing these heritage structures, engaging with local stakeholders to ensure contextually sensitive proposals.</p>
     <div data-reveal style="margin-top:2.4rem;display:flex;gap:.6rem;flex-wrap:wrap;">
-      <span style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:#5b5a50;border:1px solid rgba(21,20,15,.18);padding:.35rem .8rem;border-radius:20px;">Adaptive Reuse</span>
-      <span style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:#5b5a50;border:1px solid rgba(21,20,15,.18);padding:.35rem .8rem;border-radius:20px;">Heritage</span>
-      <span style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:#5b5a50;border:1px solid rgba(21,20,15,.18);padding:.35rem .8rem;border-radius:20px;">Tropical Urbanism</span>
+      <span style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,243,240,.4);border:1px solid rgba(244,243,240,.2);padding:.35rem .8rem;border-radius:20px;">Adaptive Reuse</span>
+      <span style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,243,240,.4);border:1px solid rgba(244,243,240,.2);padding:.35rem .8rem;border-radius:20px;">Heritage</span>
+      <span style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,243,240,.4);border:1px solid rgba(244,243,240,.2);padding:.35rem .8rem;border-radius:20px;">Tropical Urbanism</span>
     </div>
   </div>
 </section>
