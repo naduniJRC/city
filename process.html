@@ -48,6 +48,15 @@
       .activities-sec{padding:4rem 1.5rem!important;}
       .proj-header{padding:3rem 1.5rem 1.5rem!important;}
       .city-content{padding:3.5rem 1.5rem!important;}
+      .itf-section{padding:4rem 1.5rem!important;}
+      .itf-row{display:flex!important;flex-direction:column!important;}
+      .itf-photos{height:220px!important;order:1!important;width:100%!important;}
+      .itf-panel{min-height:120px!important;order:2!important;width:100%!important;}
+      .itf-color-strip{display:none!important;}
+      .itf-landscape-col{height:100%!important;}
+      .itf-landscape-wrap{flex:1!important;flex-shrink:1!important;}
+      .itf-landscape-wrap img{height:100%!important;aspect-ratio:unset!important;}
+      .itf-panel span:first-child{font-size:clamp(1.6rem,7vw,2.4rem)!important;}
     }
     @media(max-width:480px){
       #navPanel{padding:.35rem!important;gap:.05rem!important}
@@ -177,7 +186,7 @@
 </section>
 
 <!-- ============ TIMELINE ============ -->
-<section style="background:#15140f;color:#f4f3f0;padding:8rem 2.2rem;">
+<section style="background:rgb(137,116,146);color:#f4f3f0;padding:8rem 2.2rem;">
   <div style="max-width:1100px;margin:0 auto;">
     <div data-reveal="" style="margin-bottom:4rem;display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid rgba(244,243,240,.16);padding-bottom:1.4rem;">
       <h2 style="font-family:Arial;font-weight:300;font-size:clamp(1.8rem,3.5vw,3rem);letter-spacing:-.01em;">Timeline</h2>
@@ -334,7 +343,7 @@
 <!-- ============ CITY PROJECTS ============ -->
 
 <!-- WORKSHOP IN ACTION -->
-<section style="background:#15140f;padding:7rem 4rem;">
+<section class="itf-section" style="background:rgb(170,108,92);padding:7rem 4rem;">
   <div style="max-width:1200px;margin:0 auto;">
 
     <!-- Header — consistent with rest of page -->
@@ -349,36 +358,36 @@
     <!-- rows: each splits page 50/50 — content rectangle one side, colored empty the other -->
 
     <!-- 01 COLOMBO — content LEFT [portrait | landscape+text], empty RIGHT -->
-    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:4px;">
-      <div style="display:grid;grid-template-columns:2fr 3fr;gap:4px;height:490px;overflow:hidden;">
+    <div data-reveal class="itf-row" style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:4px;">
+      <div class="itf-photos" style="display:grid;grid-template-columns:2fr 3fr;gap:4px;height:490px;overflow:hidden;">
         <div style="overflow:hidden;">
           <img src="assets/img/colombo-img-one.jpg" alt="Colombo Workshop" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
         </div>
-        <div style="display:flex;flex-direction:column;overflow:hidden;">
-          <div style="overflow:hidden;flex-shrink:0;">
+        <div class="itf-landscape-col" style="display:flex;flex-direction:column;overflow:hidden;">
+          <div class="itf-landscape-wrap" style="overflow:hidden;flex-shrink:0;">
             <img src="assets/img/colombo-img-two.jpg" alt="Colombo Workshop" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .5s ease;" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
           </div>
-          <div style="flex:1;background:rgb(97,29,44);"></div>
+          <div class="itf-color-strip" style="flex:1;background:rgb(97,29,44);"></div>
         </div>
       </div>
-      <div style="background:rgb(97,29,44);overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:1.8rem;">
+      <div class="itf-panel" style="background:rgb(97,29,44);overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:1.8rem;">
         <span style="font-family:Arial;font-weight:900;font-size:clamp(2.8rem,5vw,4.5rem);color:rgba(255,255,255,.13);letter-spacing:-.05em;white-space:nowrap;user-select:none;pointer-events:none;">Colombo</span>
         <span style="font-size:.46rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:.6rem;">Edition 01 · Sri Lanka · 2024</span>
       </div>
     </div>
 
     <!-- 02 BARCELONA — empty LEFT, content RIGHT [landscape+text | portrait] -->
-    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:4px;">
-      <div style="background:rgb(128,145,163);overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:1.8rem;">
+    <div data-reveal class="itf-row" style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:4px;">
+      <div class="itf-panel" style="background:rgb(128,145,163);overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:1.8rem;">
         <span style="font-family:Arial;font-weight:900;font-size:clamp(2.8rem,5vw,4.5rem);color:rgba(255,255,255,.15);letter-spacing:-.05em;white-space:nowrap;user-select:none;pointer-events:none;">Barcelona</span>
         <span style="font-size:.46rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:.6rem;">Edition 02 · Spain · 2025</span>
       </div>
-      <div style="display:grid;grid-template-columns:3fr 2fr;gap:4px;height:490px;overflow:hidden;">
-        <div style="display:flex;flex-direction:column;overflow:hidden;">
-          <div style="overflow:hidden;flex-shrink:0;">
+      <div class="itf-photos" style="display:grid;grid-template-columns:3fr 2fr;gap:4px;height:490px;overflow:hidden;">
+        <div class="itf-landscape-col" style="display:flex;flex-direction:column;overflow:hidden;">
+          <div class="itf-landscape-wrap" style="overflow:hidden;flex-shrink:0;">
             <img src="assets/img/barcelona-img-one.jpg" alt="Barcelona Workshop" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .5s ease;" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
           </div>
-          <div style="flex:1;background:rgb(128,145,163);"></div>
+          <div class="itf-color-strip" style="flex:1;background:rgb(128,145,163);"></div>
         </div>
         <div style="overflow:hidden;">
           <img src="assets/img/barcelona-img-two.jpg" alt="Barcelona Workshop" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
@@ -387,34 +396,34 @@
     </div>
 
     <!-- 03 SHANGHAI — content LEFT [portrait | text+landscape], empty RIGHT -->
-    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:4px;">
-      <div style="display:grid;grid-template-columns:2fr 3fr;gap:4px;height:490px;overflow:hidden;">
+    <div data-reveal class="itf-row" style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:4px;">
+      <div class="itf-photos" style="display:grid;grid-template-columns:2fr 3fr;gap:4px;height:490px;overflow:hidden;">
         <div style="overflow:hidden;">
           <img src="assets/img/shanghai-img-one.jpeg" alt="Shanghai Workshop" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
         </div>
-        <div style="display:flex;flex-direction:column;overflow:hidden;">
-          <div style="flex:1;background:rgb(241,193,127);"></div>
-          <div style="overflow:hidden;flex-shrink:0;">
+        <div class="itf-landscape-col" style="display:flex;flex-direction:column;overflow:hidden;">
+          <div class="itf-color-strip" style="flex:1;background:rgb(241,193,127);"></div>
+          <div class="itf-landscape-wrap" style="overflow:hidden;flex-shrink:0;">
             <img src="assets/img/shanghai-img-two.jpeg" alt="Shanghai Workshop" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .5s ease;" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
           </div>
         </div>
       </div>
-      <div style="background:rgb(241,193,127);overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:1.8rem;">
+      <div class="itf-panel" style="background:rgb(241,193,127);overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:1.8rem;">
         <span style="font-family:Arial;font-weight:900;font-size:clamp(2.8rem,5vw,4.5rem);color:rgba(255,255,255,.2);letter-spacing:-.05em;white-space:nowrap;user-select:none;pointer-events:none;">Shanghai</span>
         <span style="font-size:.46rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:.6rem;">Edition 03 · China · 2025</span>
       </div>
     </div>
 
     <!-- 04 TOKYO — empty LEFT, content RIGHT [text+landscape | portrait] -->
-    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:4px;">
-      <div style="background:rgb(96,90,162);overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:1.8rem;">
+    <div data-reveal class="itf-row" style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:4px;">
+      <div class="itf-panel" style="background:rgb(96,90,162);overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:1.8rem;">
         <span style="font-family:Arial;font-weight:900;font-size:clamp(2.8rem,5vw,4.5rem);color:rgba(255,255,255,.15);letter-spacing:-.05em;white-space:nowrap;user-select:none;pointer-events:none;">Tokyo</span>
         <span style="font-size:.46rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:.6rem;">Edition 04 · Japan · 2026</span>
       </div>
-      <div style="display:grid;grid-template-columns:3fr 2fr;gap:4px;height:490px;overflow:hidden;">
-        <div style="display:flex;flex-direction:column;overflow:hidden;">
-          <div style="flex:1;background:rgb(96,90,162);"></div>
-          <div style="overflow:hidden;flex-shrink:0;">
+      <div class="itf-photos" style="display:grid;grid-template-columns:3fr 2fr;gap:4px;height:490px;overflow:hidden;">
+        <div class="itf-landscape-col" style="display:flex;flex-direction:column;overflow:hidden;">
+          <div class="itf-color-strip" style="flex:1;background:rgb(96,90,162);"></div>
+          <div class="itf-landscape-wrap" style="overflow:hidden;flex-shrink:0;">
             <img src="assets/img/tokyo-img-one.jpeg" alt="Tokyo Workshop" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .5s ease;" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
           </div>
         </div>
@@ -543,7 +552,7 @@
     </div>
   </div>
   <div class="city-content" style="padding:6rem 4.5rem;display:flex;flex-direction:column;justify-content:center;">
-    <span data-reveal style="font-size:.58rem;letter-spacing:.36em;text-transform:uppercase;color:#9b9a92;display:block;margin-bottom:2rem;">Chile · 3–15 January 2027 · Universidad San Sebastián</span>
+    <span data-reveal style="font-size:.58rem;letter-spacing:.36em;text-transform:uppercase;color:#9b9a92;display:block;margin-bottom:2rem;">Chile · January 2027 · Universidad San Sebastián</span>
     <h2 data-reveal style="font-family:Arial;font-weight:900;font-size:clamp(2rem,4vw,3.4rem);line-height:.92;letter-spacing:-.03em;color:#15140f;margin-bottom:.8rem;">Patagonia</h2>
     <p data-reveal style="font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:#9b9a92;margin-bottom:2rem;">Green Infrastructure and Territorial Systems</p>
     <p data-reveal style="font-size:.95rem;line-height:1.9;color:#5b5a50;max-width:480px;">The Patagonia workshop shifts focus from conventional urban questions to a territorial scale where infrastructure, tourism, conservation, energy production, and human settlements generate dispersed, environmentally sensitive urbanization. Using the Llanquihue-Maullín watershed as the primary spatial structure, participants investigate how water structures territory, how waterfronts function as transition landscapes between city and nature, and how architecture can foster resilient relationships between ecological processes, infrastructure, and public life.</p>
@@ -565,7 +574,7 @@
     </div>
     <div><h4 style="font-size:.56rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(244,243,240,.3);margin-bottom:1.1rem;">Programme</h4><div style="display:flex;flex-direction:column;gap:.6rem;"><a href="index.html#about" style="font-size:.82rem;color:rgba(244,243,240,.4);text-decoration:none;">About</a><a href="cities.html" style="font-size:.82rem;color:rgba(244,243,240,.4);text-decoration:none;">Cities</a><a href="process.html" style="font-size:.82rem;color:#f4f3f0;text-decoration:none;">Process</a></div></div>
     <div><h4 style="font-size:.56rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(244,243,240,.3);margin-bottom:1.1rem;">Network</h4><div style="display:flex;flex-direction:column;gap:.6rem;"><a href="#" style="font-size:.82rem;color:rgba(244,243,240,.4);text-decoration:none;">Universities</a><a href="#" style="font-size:.82rem;color:rgba(244,243,240,.4);text-decoration:none;">Tutors</a><a href="#" style="font-size:.82rem;color:rgba(244,243,240,.4);text-decoration:none;">Alumni</a></div></div>
-    <div><h4 style="font-size:.56rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(244,243,240,.3);margin-bottom:1.1rem;">Connect</h4><div style="display:flex;flex-direction:column;gap:.6rem;"><a href="#" style="font-size:.82rem;color:rgba(244,243,240,.4);text-decoration:none;">Instagram</a><a href="#" style="font-size:.82rem;color:rgba(244,243,240,.4);text-decoration:none;">LinkedIn</a><a href="index.html#join" style="font-size:.82rem;color:rgba(244,243,240,.4);text-decoration:none;">Apply</a></div></div>
+    <div><h4 style="font-size:.56rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(244,243,240,.3);margin-bottom:1.1rem;">Connect</h4><div style="display:flex;flex-direction:column;gap:.6rem;"><a href="#" style="font-size:.82rem;color:rgba(244,243,240,.4);text-decoration:none;">Instagram</a><a href="index.html#join" style="font-size:.82rem;color:rgba(244,243,240,.4);text-decoration:none;">Apply</a></div></div>
   </div>
   <div id="footer-bottom" style="max-width:1200px;margin:0 auto;border-top:1px solid rgba(244,243,240,.1);padding-top:1.5rem;display:flex;justify-content:space-between;font-size:.6rem;letter-spacing:.1em;color:rgba(244,243,240,.25);">
     <span>© 2026 City Scales International Workshop</span>
