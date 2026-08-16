@@ -15,7 +15,7 @@
     /* Bento grid */
     .bento{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(21,20,15,.12);border:1px solid rgba(21,20,15,.12);}
     .bento-card{padding:2.6rem;display:flex;flex-direction:column;justify-content:space-between;min-height:230px;}
-    .bento-card.dark{background:#15140f;}
+    .bento-card.dark{background:rgb(85,118,124);}
     .bento-card.light{background:#f4f3f0;}
     .span2{grid-column:span 2;}
     .bento-hrs{font-family:Arial;font-weight:900;line-height:1;transition:transform .3s ease;}
@@ -82,6 +82,14 @@
     .mob-link:hover,.mob-link.mob-active{color:#f4f3f0;}
     .mob-close{position:absolute;top:1.4rem;right:1.5rem;background:none;border:none;color:rgba(244,243,240,.35);font-size:1.8rem;cursor:pointer;padding:.4rem;line-height:1;transition:color .2s;}
     .mob-close:hover{color:#f4f3f0;}
+    /* Lightbox */
+    #itf-lightbox{position:fixed;inset:0;z-index:999;background:rgba(15,14,10,.92);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease;cursor:zoom-out;}
+    #itf-lightbox.open{opacity:1;pointer-events:auto;}
+    #itf-lightbox img{max-width:90vw;max-height:88vh;object-fit:contain;border-radius:2px;transform:scale(.96);transition:transform .3s ease;box-shadow:0 32px 80px rgba(0,0,0,.5);}
+    #itf-lightbox.open img{transform:scale(1);}
+    #itf-lightbox-close{position:absolute;top:1.4rem;right:1.8rem;background:none;border:none;color:rgba(244,243,240,.5);font-size:2rem;cursor:pointer;line-height:1;transition:color .2s;}
+    #itf-lightbox-close:hover{color:#f4f3f0;}
+    .itf-photos img{cursor:zoom-in;}
     @media(max-width:640px){
       .nav-links{display:none!important;}
       .nav-ham{display:flex!important;}
@@ -343,8 +351,8 @@
 <!-- ============ CITY PROJECTS ============ -->
 
 <!-- WORKSHOP IN ACTION -->
-<section class="itf-section" style="background:rgb(170,108,92);padding:7rem 4rem;">
-  <div style="max-width:1200px;margin:0 auto;">
+<section class="itf-section" style="background:#f4f3f0;padding:7rem 4rem;">
+  <div style="max-width:960px;margin:0 auto;">
 
     <!-- Header — consistent with rest of page -->
     <div data-reveal style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:4rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(244,243,240,.1);">
@@ -565,7 +573,7 @@
 </section>
 
 <!-- ============ FOOTER ============ -->
-<footer style="background:#15140f;color:rgba(244,243,240,.45);padding:5rem 2.2rem 2rem;">
+<footer style="background:rgb(144,167,160);color:rgba(21,20,15,.6);padding:5rem 2.2rem 2rem;">
   <div id="footer-grid" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3.5rem;">
     <div>
       <a href="index.html" style="font-family:Arial;font-weight:500;font-size:1.4rem;color:#f4f3f0;text-decoration:none;">City Scales</a>
@@ -636,6 +644,41 @@ document.addEventListener('DOMContentLoaded', function() {
   btn.addEventListener('click',open);
   cls.addEventListener('click',close);
   menu.querySelectorAll('.mob-link').forEach(function(l){l.addEventListener('click',close);});
+})();
+</script>
+<!-- Lightbox overlay -->
+<div id="itf-lightbox">
+  <button id="itf-lightbox-close">&#215;</button>
+  <img id="itf-lightbox-img" src="" alt="">
+</div>
+<script>
+(function(){
+  var lb = document.getElementById('itf-lightbox');
+  var lbImg = document.getElementById('itf-lightbox-img');
+  function open(src, alt){lbImg.src=src;lbImg.alt=alt||'';lb.classList.add('open');}
+  function close(){lb.classList.remove('open');setTimeout(function(){lbImg.src='';},300);}
+  // Hover preview
+  var prev=document.createElement('div');
+  prev.style.cssText='position:fixed;z-index:500;pointer-events:none;opacity:0;transition:opacity .22s ease;border-radius:3px;overflow:hidden;box-shadow:0 20px 56px rgba(0,0,0,.38);';
+  var prevImg=document.createElement('img');
+  prevImg.style.cssText='width:400px;height:270px;object-fit:cover;display:block;';
+  prev.appendChild(prevImg);
+  document.body.appendChild(prev);
+  function movePreview(e){
+    var x=e.clientX+24,y=e.clientY-135;
+    if(x+400>window.innerWidth)x=e.clientX-424;
+    if(y<8)y=8;
+    prev.style.left=x+'px';prev.style.top=y+'px';
+  }
+  document.querySelectorAll('.itf-photos img').forEach(function(img){
+    img.addEventListener('mouseenter',function(e){prevImg.src=img.src;prev.style.opacity='1';movePreview(e);});
+    img.addEventListener('mousemove',movePreview);
+    img.addEventListener('mouseleave',function(){prev.style.opacity='0';});
+    img.addEventListener('click',function(){open(img.src,img.alt);});
+  });
+  lb.addEventListener('click',function(e){if(e.target!==lbImg)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  document.getElementById('itf-lightbox-close').addEventListener('click',close);
 })();
 </script>
 </body>
