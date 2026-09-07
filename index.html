@@ -273,10 +273,10 @@
 <p data-reveal="" style="font-size:.96rem;line-height:1.9;color:#5b5a50;margin-top:1.8rem;">City Scales highlights the importance of understanding architecture within the broader urban context, which includes the various ecologies that compose it. Cities operate as systems in which elements of different scales coexist. These scales range from individual buildings to the entire built territory, from public to private space. The relationship between these scales allows us to understand how urban environments are organised, how they grow, and how they are transformed.</p>
       <p data-reveal="" style="font-size:.96rem;line-height:1.9;color:#5b5a50;margin-top:1.8rem;">Each of the participating cities exhibits a specific scale. Sri Lanka is developing on a tropical scale, closely connected to its natural environment. Barcelona functions at a medium scale but is highly densified, as corresponds to the Mediterranean city model, and in a distinctly cosmopolitan manner. The scale of Shanghai is defined by the explosive growth in height and volume over recent decades, a phenomenon characteristic not only of China but of East Asia more broadly, as it evolves into a megalopolis. Tokyo's distinctive urban character emerges from layers of destruction, renewal, and growth, creating a cultural and architectural patchwork that demands new connections between past and present.</p>
       <div data-reveal style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-top:2.8rem;justify-content:flex-end;">
-        <img src="assets/img/sdg-one.jpg" alt="SDG 1" style="width:36px;height:36px;object-fit:cover;border-radius:3px;">
-        <img src="assets/img/sdg-two.jpg" alt="SDG 2" style="width:36px;height:36px;object-fit:cover;border-radius:3px;">
-        <img src="assets/img/sdg-three.jpg" alt="SDG 3" style="width:36px;height:36px;object-fit:cover;border-radius:3px;">
-        <img src="assets/img/sdg-four.jpg" alt="SDG 4" style="width:36px;height:36px;object-fit:cover;border-radius:3px;">
+        <img src="assets/img/sdg-one.jpg" alt="SDG 1" style="width:52px;height:52px;object-fit:cover;border-radius:3px;">
+        <img src="assets/img/sdg-two.jpg" alt="SDG 2" style="width:52px;height:52px;object-fit:cover;border-radius:3px;">
+        <img src="assets/img/sdg-three.jpg" alt="SDG 3" style="width:52px;height:52px;object-fit:cover;border-radius:3px;">
+        <img src="assets/img/sdg-four.jpg" alt="SDG 4" style="width:52px;height:52px;object-fit:cover;border-radius:3px;">
       </div>
     </div>
   </div>
@@ -525,7 +525,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <a href="process.html" class="mob-link">Process</a>
     <a href="people.html" class="mob-link">People</a>
   </nav>
-  <a href="#join" style="display:inline-block;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;background:#f4f3f0;color:#15140f;padding:.9rem 2.2rem;border-radius:30px;font-family:Arial;font-weight:700;text-decoration:none;">Apply Now</a>
+  <a href="#join" id="mobApply" style="display:inline-block;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;background:#f4f3f0;color:#15140f;padding:.9rem 2.2rem;border-radius:30px;font-family:Arial;font-weight:700;text-decoration:none;">Apply Now</a>
   <div style="position:absolute;bottom:2.5rem;left:2.5rem;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,243,240,.18);">City Scales International</div>
 </div>
 <script>
@@ -536,6 +536,7 @@ document.addEventListener('DOMContentLoaded', function() {
   btn.addEventListener('click',open);
   cls.addEventListener('click',close);
   menu.querySelectorAll('.mob-link').forEach(function(l){l.addEventListener('click',close);});
+  var apply=document.getElementById('mobApply');if(apply)apply.addEventListener('click',close);
 })();
 </script>
 </body>
