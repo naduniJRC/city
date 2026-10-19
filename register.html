@@ -31,10 +31,24 @@
     .field{display:flex;flex-direction:column;}
     .field.full{grid-column:1 / -1;}
     label{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:#9b9a92;margin-bottom:.6rem;font-weight:600;}
-    input, select, textarea{font-family:Arial,sans-serif;font-size:.95rem;color:#15140f;background:transparent;border:none;border-bottom:1px solid rgba(21,20,15,.2);padding:.7rem 0;outline:none;transition:border-color .2s;}
-    input:focus, select:focus, textarea:focus{border-bottom-color:#15140f;}
+    input, textarea{font-family:Arial,sans-serif;font-size:.95rem;color:#15140f;background:transparent;border:none;border-bottom:1px solid rgba(21,20,15,.2);padding:.7rem 0;outline:none;transition:border-color .2s;}
+    input:focus, textarea:focus{border-bottom-color:#15140f;}
     textarea{resize:vertical;min-height:70px;}
-    select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' stroke='%2315140f' stroke-width='1.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");background-repeat:no-repeat;background-position:right .4rem center;padding-right:1.4rem;}
+
+    /* ── Custom select (editorial style) ── */
+    .select{position:relative;}
+    .select-trigger{display:flex;align-items:center;justify-content:space-between;gap:1rem;font-family:Arial,sans-serif;font-size:.95rem;color:#15140f;background:transparent;border:none;border-bottom:1px solid rgba(21,20,15,.2);padding:.7rem 0;cursor:pointer;outline:none;text-align:left;transition:border-color .2s;width:100%;}
+    .select-trigger:hover,.select.open .select-trigger,.select-trigger:focus{border-bottom-color:#15140f;}
+    .select-trigger .value{flex:1;color:#15140f;}
+    .select-trigger .value.placeholder{color:#9b9a92;}
+    .select-trigger .chev{width:10px;height:10px;border-right:1.4px solid #15140f;border-bottom:1.4px solid #15140f;transform:rotate(45deg) translate(-2px,-2px);transition:transform .3s ease;}
+    .select.open .select-trigger .chev{transform:rotate(225deg) translate(-2px,-2px);}
+    .select-panel{position:absolute;top:calc(100% + .5rem);left:0;right:0;background:#15140f;border-radius:3px;box-shadow:0 20px 56px rgba(21,20,15,.22);opacity:0;transform:translateY(-6px);pointer-events:none;transition:opacity .22s ease, transform .22s ease;z-index:20;overflow:hidden;}
+    .select.open .select-panel{opacity:1;transform:none;pointer-events:auto;}
+    .select-option{display:block;width:100%;padding:.95rem 1.2rem;font-family:Arial,sans-serif;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,243,240,.65);background:transparent;border:none;border-bottom:1px solid rgba(244,243,240,.08);text-align:left;cursor:pointer;transition:background .2s ease, color .2s ease, padding-left .2s ease;}
+    .select-option:last-child{border-bottom:none;}
+    .select-option:hover,.select-option.active{color:#f4f3f0;background:rgba(244,243,240,.06);padding-left:1.6rem;}
+    .select-option.active{color:#e8a87c;}
 
     .submit{grid-column:1 / -1;margin-top:1.8rem;}
     .submit button{font-family:Arial;font-weight:700;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;background:#15140f;color:#f4f3f0;border:none;padding:1.1rem 2.4rem;border-radius:30px;cursor:pointer;transition:background .25s ease, transform .25s ease;}
@@ -91,28 +105,29 @@
       </div>
 
       <div class="field">
-        <label for="year">Year of Study</label>
-        <select id="year" name="Year_of_Study" required>
-          <option value="" disabled selected>Select year</option>
-          <option value="Year 1">Year 1</option>
-          <option value="Year 2">Year 2</option>
-          <option value="Year 3">Year 3</option>
-          <option value="Year 4">Year 4</option>
-          <option value="Year 5">Year 5</option>
-          <option value="Postgraduate">Postgraduate</option>
-          <option value="PhD">PhD</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="Email" required placeholder="you@email.com">
+        <label for="year-trigger">Year of Study</label>
+        <div class="select" id="year-select" data-select>
+          <button type="button" class="select-trigger" id="year-trigger" aria-haspopup="listbox" aria-expanded="false">
+            <span class="value placeholder">Select year</span>
+            <span class="chev" aria-hidden="true"></span>
+          </button>
+          <div class="select-panel" role="listbox">
+            <button type="button" class="select-option" data-value="Year 1">Year 1</button>
+            <button type="button" class="select-option" data-value="Year 2">Year 2</button>
+            <button type="button" class="select-option" data-value="Year 3">Year 3</button>
+            <button type="button" class="select-option" data-value="Year 4">Year 4</button>
+            <button type="button" class="select-option" data-value="Year 5">Year 5</button>
+            <button type="button" class="select-option" data-value="Postgraduate">Postgraduate</button>
+            <button type="button" class="select-option" data-value="PhD">PhD</button>
+            <button type="button" class="select-option" data-value="Other">Other</button>
+          </div>
+          <input type="hidden" name="Year_of_Study" id="year" required>
+        </div>
       </div>
 
       <div class="field full">
-        <label for="contact">Contact Information</label>
-        <textarea id="contact" name="Contact_Information" rows="3" required placeholder="Phone number, WhatsApp, or preferred way to reach you"></textarea>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="Email" required placeholder="you@email.com">
       </div>
 
       <div class="submit">
@@ -124,6 +139,44 @@
   </div>
 
 </div>
+
+<script>
+(function(){
+  document.querySelectorAll('[data-select]').forEach(function(sel){
+    var trigger = sel.querySelector('.select-trigger');
+    var valueEl = sel.querySelector('.value');
+    var hidden  = sel.querySelector('input[type="hidden"]');
+    var options = sel.querySelectorAll('.select-option');
+
+    function close(){ sel.classList.remove('open'); trigger.setAttribute('aria-expanded','false'); }
+    function open(){ sel.classList.add('open'); trigger.setAttribute('aria-expanded','true'); }
+
+    trigger.addEventListener('click', function(e){
+      e.stopPropagation();
+      sel.classList.contains('open') ? close() : open();
+    });
+
+    options.forEach(function(opt){
+      opt.addEventListener('click', function(){
+        options.forEach(function(o){ o.classList.remove('active'); });
+        opt.classList.add('active');
+        valueEl.textContent = opt.textContent;
+        valueEl.classList.remove('placeholder');
+        hidden.value = opt.getAttribute('data-value');
+        close();
+      });
+    });
+
+    document.addEventListener('click', function(e){
+      if (!sel.contains(e.target)) close();
+    });
+
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') close();
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
