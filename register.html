@@ -83,7 +83,14 @@
     <h2>Register for Venezia</h2>
     <p class="lede">Join international peers for the City Scales Venezia workshop. Submit your details below and the coordinating team will be in touch with the next steps for your application.</p>
 
-    <form action="mailto:jose.remon@xjtlu.edu.cn,adria.sanchez@salle.url.edu,njayaweera@uom.lk?subject=City%20Scales%20Venezia%20Registration" method="post" enctype="text/plain">
+    <form action="https://formsubmit.co/jose.remon@xjtlu.edu.cn" method="POST">
+      <input type="hidden" name="_cc" value="adria.sanchez@salle.url.edu,njayaweera@uom.lk">
+      <input type="hidden" name="_subject" value="City Scales Venezia — New Registration">
+      <input type="hidden" name="_template" value="table">
+      <!-- _next must be an absolute URL. Update this to your live domain, e.g. https://yourdomain.com/thanks.html -->
+      <!-- <input type="hidden" name="_next" value="https://YOUR-DOMAIN/thanks.html"> -->
+      <input type="hidden" name="_captcha" value="true">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
       <div class="field">
         <label for="name">Full Name</label>
         <input type="text" id="name" name="Name" required placeholder="Your full name">
