@@ -53,7 +53,24 @@
     .submit{grid-column:1 / -1;margin-top:1.8rem;}
     .submit button{font-family:Arial;font-weight:700;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;background:#15140f;color:#f4f3f0;border:none;padding:1.1rem 2.4rem;border-radius:30px;cursor:pointer;transition:background .25s ease, transform .25s ease;}
     .submit button:hover{background:#2a2820;transform:translateY(-2px);}
+    .submit button:disabled{opacity:.55;cursor:wait;transform:none;}
     .note{grid-column:1 / -1;font-size:.72rem;color:#9b9a92;line-height:1.6;margin-top:1rem;}
+
+    .form-error{grid-column:1 / -1;font-size:.78rem;line-height:1.6;color:#b7322a;padding:.9rem 1.1rem;border:1px solid rgba(183,50,42,.3);border-radius:3px;background:rgba(183,50,42,.06);display:none;}
+    .form-error.show{display:block;}
+
+    /* ── Success overlay ── */
+    .success-overlay{position:fixed;inset:0;background:rgba(21,20,15,.72);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:2rem;z-index:200;opacity:0;pointer-events:none;transition:opacity .35s ease;}
+    .success-overlay.show{opacity:1;pointer-events:auto;}
+    .success-card{background:#f4f3f0;max-width:520px;width:100%;padding:3.6rem 3rem 3rem;text-align:center;border-radius:4px;box-shadow:0 30px 80px rgba(0,0,0,.3);transform:translateY(14px) scale(.98);transition:transform .45s cubic-bezier(.22,1,.36,1);}
+    .success-overlay.show .success-card{transform:none;}
+    .success-mark{width:68px;height:68px;border-radius:50%;background:#15140f;color:#f4f3f0;margin:0 auto 2rem;display:flex;align-items:center;justify-content:center;font-size:1.7rem;line-height:1;}
+    .success-eyebrow{font-size:.6rem;letter-spacing:.36em;text-transform:uppercase;color:#9b9a92;display:block;margin-bottom:1rem;}
+    .success-card h3{font-family:Arial;font-weight:300;font-size:clamp(1.8rem,3.4vw,2.6rem);letter-spacing:-.01em;color:#15140f;margin-bottom:1.2rem;line-height:1;}
+    .success-card p{font-size:.92rem;line-height:1.8;color:#5b5a50;margin-bottom:2.2rem;}
+    .success-card .meta{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:#15140f;font-weight:700;display:block;margin-bottom:2rem;}
+    .success-card button{font-family:Arial;font-weight:700;font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;background:#15140f;color:#f4f3f0;border:none;padding:.9rem 2rem;border-radius:30px;cursor:pointer;transition:background .25s ease;}
+    .success-card button:hover{background:#2a2820;}
 
     @media(max-width:900px){
       .page{grid-template-columns:1fr;}
@@ -83,13 +100,13 @@
     <h2>Register for Venezia</h2>
     <p class="lede">Join international peers for the City Scales Venezia workshop. Submit your details below and the coordinating team will be in touch with the next steps for your application.</p>
 
-    <form action="https://formsubmit.co/jose.remon@xjtlu.edu.cn" method="POST">
-      <input type="hidden" name="_cc" value="adria.sanchez@salle.url.edu,njayaweera@uom.lk">
+    <!-- TESTING: primary endpoint temporarily set to kamasaranigamlath@gmail.com for activation + delivery testing.
+         After testing, change the data-endpoint-email below back to jose.remon@xjtlu.edu.cn and move Kamasarani off the _cc list. -->
+    <form id="registerForm" data-endpoint-email="kamasaranigamlath@gmail.com" method="POST">
+      <input type="hidden" name="_cc" value="jose.remon@xjtlu.edu.cn,adria.sanchez@salle.url.edu,njayaweera@uom.lk">
       <input type="hidden" name="_subject" value="City Scales Venezia — New Registration">
       <input type="hidden" name="_template" value="table">
-      <!-- _next must be an absolute URL. Update this to your live domain, e.g. https://yourdomain.com/thanks.html -->
-      <!-- <input type="hidden" name="_next" value="https://YOUR-DOMAIN/thanks.html"> -->
-      <input type="hidden" name="_captcha" value="true">
+      <input type="hidden" name="_captcha" value="false">
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
       <div class="field">
         <label for="name">Full Name</label>
@@ -138,13 +155,29 @@
       </div>
 
       <div class="submit">
-        <button type="submit">Submit Registration &rarr;</button>
+        <button type="submit" id="submitBtn">Submit Registration &rarr;</button>
       </div>
+
+      <div class="form-error" id="formError" role="alert"></div>
 
       <p class="note">By submitting, you agree that the City Scales coordinating team (José Remón, Adrià S. Llorens, Nadeeka Jayaweera) may contact you about the Venezia workshop.</p>
     </form>
   </div>
 
+</div>
+
+<!-- Success overlay -->
+<div class="success-overlay" id="successOverlay" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+  <div class="success-card">
+    <div class="success-mark">&#10003;</div>
+    <span class="success-eyebrow">Registration Received</span>
+    <h3 id="successTitle">Thank you.</h3>
+    <p>Your registration for the City Scales Venezia workshop has been sent to the coordinating team. We will be in touch with the next steps for your application.</p>
+    <span class="meta">Italy · July 2027</span>
+    <div>
+      <button type="button" id="successClose">Close</button>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -180,6 +213,91 @@
 
     document.addEventListener('keydown', function(e){
       if (e.key === 'Escape') close();
+    });
+  });
+})();
+
+// ── AJAX form submission ──
+(function(){
+  var form        = document.getElementById('registerForm');
+  var submitBtn   = document.getElementById('submitBtn');
+  var errorBox    = document.getElementById('formError');
+  var overlay     = document.getElementById('successOverlay');
+  var closeBtn    = document.getElementById('successClose');
+  if (!form) return;
+
+  var endpointEmail = form.getAttribute('data-endpoint-email');
+  var endpoint = 'https://formsubmit.co/ajax/' + encodeURIComponent(endpointEmail);
+
+  function showError(msg){
+    errorBox.textContent = msg;
+    errorBox.classList.add('show');
+  }
+  function hideError(){
+    errorBox.classList.remove('show');
+    errorBox.textContent = '';
+  }
+  function showSuccess(){
+    overlay.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+  function hideSuccess(){
+    overlay.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+
+  function resetCustomSelect(sel){
+    var valueEl = sel.querySelector('.value');
+    var hidden  = sel.querySelector('input[type="hidden"]');
+    sel.querySelectorAll('.select-option').forEach(function(o){ o.classList.remove('active'); });
+    valueEl.textContent = 'Select year';
+    valueEl.classList.add('placeholder');
+    if (hidden) hidden.value = '';
+  }
+
+  closeBtn.addEventListener('click', hideSuccess);
+  overlay.addEventListener('click', function(e){ if (e.target === overlay) hideSuccess(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && overlay.classList.contains('show')) hideSuccess(); });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    hideError();
+
+    // Native validation for required inputs (custom select included via hidden input)
+    var hiddenYear = document.getElementById('year');
+    if (hiddenYear && !hiddenYear.value){
+      showError('Please select your year of study.');
+      return;
+    }
+
+    submitBtn.disabled = true;
+    var originalLabel = submitBtn.textContent;
+    submitBtn.textContent = 'Sending…';
+
+    var data = new FormData(form);
+
+    fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: data
+    })
+    .then(function(res){ return res.json().catch(function(){ return {}; }).then(function(json){ return { ok: res.ok, json: json }; }); })
+    .then(function(r){
+      if (r.ok && (r.json.success === 'true' || r.json.success === true)) {
+        form.reset();
+        document.querySelectorAll('[data-select]').forEach(resetCustomSelect);
+        showSuccess();
+      } else {
+        var msg = (r.json && r.json.message) ? r.json.message : 'Something went wrong. Please try again.';
+        showError(msg);
+      }
+    })
+    .catch(function(){
+      showError('Network error. Please check your connection and try again.');
+    })
+    .finally(function(){
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalLabel;
     });
   });
 })();
